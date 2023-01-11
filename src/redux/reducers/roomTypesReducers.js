@@ -10,17 +10,17 @@ const displayRoomType = (payload) => ({
 });
 
 // get (load) greetings from API
-export const fetchRoom_TypeAPI = () => async (dispatch) => {
+export const fetchRoomTypeAPI = () => async (dispatch) => {
   const response = await axios.get('http://localhost:3000/api/v1/room_types');
-  const room_type = response.data;
-  dispatch(displayRoomType(room_type));
+  const roomType = response.data;
+  dispatch(displayRoomType(roomType));
 };
 
 // initial states
 const initialState = [];
 
 // Reducer for greeting
-const room_typeReducer = (state = initialState, action) => {
+const roomTypeReducer = (state = initialState, action) => {
   switch (action.type) {
     case DISPLAY_ROOM_TYPE:
       return action.payload;
@@ -29,4 +29,4 @@ const room_typeReducer = (state = initialState, action) => {
   }
 };
 
-export default room_typeReducer;
+export default roomTypeReducer;
