@@ -22,7 +22,7 @@ const initialState = [];
 // Reducer for greeting
 const reservationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case DISPLAY_GREETING:
+    case DISPLAY_RESERVATION:
       return action.payload;
     default:
       return state;
