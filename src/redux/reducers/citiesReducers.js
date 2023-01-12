@@ -11,7 +11,7 @@ const displayCity = (payload) => ({
 
 // get (load) greetings from API
 export const fetchCityAPI = () => async (dispatch) => {
-  const response = await axios.get('http://localhost:4000/api/v1/cities');
+  const response = await axios.get('http://localhost:3000/api/v1/cities');
   const city = response.data;
   dispatch(displayCity(city));
 };
