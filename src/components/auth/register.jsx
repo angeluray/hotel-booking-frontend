@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
 import { registerUser } from '../../redux/login/login';
-// import { fetchUserAPI } from '../../redux/reducers/authReducers';
 
-/* eslint-disable-next-line jsx-a11y/label-has-associated-control */
+
 const Register = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [enteredName, setName] = useState('');
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
   const [enteredConfirmationPassword, setEnteredConfirmationPassword] = useState('');
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     dispatch(registerUser());
@@ -38,10 +39,11 @@ const Register = () => {
       name: enteredName,
       email: enteredEmail,
       password: enteredPassword,
-      confirmationPassword: enteredConfirmationPassword,
+      confirmation_Password: enteredConfirmationPassword,
     };
 
     dispatch(registerUser(userData));
+    navigate('/Login');
   };
 
   return (
@@ -50,9 +52,10 @@ const Register = () => {
         onSubmit={submitHandler}
         className="flex flex-col gap-2 items-end p-9 w-sm-3/4"
       >
-        <div className="form-group ">
+        <div className="form-group">
           <label>Full Name</label>
           <input
+            placeholder="username"
             className="form-control mx-2"
             type="name"
             value={enteredName}
@@ -63,6 +66,7 @@ const Register = () => {
         <div className="form-group ">
           <label>Email</label>
           <input
+            placeholder="email"
             className="form-control mx-2"
             type="email"
             value={enteredEmail}
@@ -73,6 +77,7 @@ const Register = () => {
         <div className="form-group ">
           <label>Password</label>
           <input
+            placeholder="password"
             className="form-control mx-2"
             type="password"
             value={enteredPassword}
@@ -81,8 +86,9 @@ const Register = () => {
           />
         </div>
         <div className="form-group ">
-          <label>confirmationPassword</label>
+          <label>confirmation_Password</label>
           <input
+            placeholder="confirmation_Password"
             className="form-control mx-2"
             type="password"
             value={enteredConfirmationPassword}
@@ -98,7 +104,13 @@ const Register = () => {
             error && <div className="alert alert-danger">{error.message}</div>
           }
       </form>
+      <div className="links">
+        <h3>Do you have an account?</h3>
+        <p>Just Login!</p>
+        <Link to="/Login">Login</Link>
     </div>
+    </div>
+    
   );
 };
 
