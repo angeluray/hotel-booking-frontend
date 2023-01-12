@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 import { registerUser } from '../../redux/login/login';
 // import { fetchUserAPI } from '../../redux/reducers/authReducers';
 
-
+/* eslint-disable-next-line jsx-a11y/label-has-associated-control */
 const Register = () => {
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
+  const [enteredName, setName] = useState('');
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
   const [enteredConfirmationPassword, setEnteredConfirmationPassword] = useState('');
@@ -15,7 +15,7 @@ const Register = () => {
   useEffect(() => {
     dispatch(registerUser());
   }, [dispatch]);
-  
+
   const nameChangeHandler = (event) => {
     setName(event.target.value);
   };
@@ -38,7 +38,7 @@ const Register = () => {
       name: enteredName,
       email: enteredEmail,
       password: enteredPassword,
-      confirmationPassword: enteredConfirmationPassword
+      confirmationPassword: enteredConfirmationPassword,
     };
 
     dispatch(registerUser(userData));
@@ -50,51 +50,51 @@ const Register = () => {
         onSubmit={submitHandler}
         className="flex flex-col gap-2 items-end p-9 w-sm-3/4"
       >
-      <div className="form-group ">
-        <label>Full Name</label>
-        <input
-          className="form-control mx-2"
-          type="name"
-          value={name}
-          onChange={nameChangeHandler}
-          autoComplete="off"
+        <div className="form-group ">
+          <label htmlFor="name">Full Name</label>
+          <input
+            className="form-control mx-2"
+            type="name"
+            value={enteredName}
+            onChange={nameChangeHandler}
+            autoComplete="off"
           />
-      </div>  
-      <div className="form-group ">
-        <label>Email</label>
-        <input
-          className="form-control mx-2"
-          type="email"
-          value={enteredEmail}
-          onChange={emailChangeHandler}
-          autoComplete="off"
-        />
-      </div>
-      <div className="form-group ">
-        <label>Password</label>
-        <input
-          className="form-control mx-2"
-          type="password"
-          value={enteredPassword}
-          onChange={passwordChangeHandler}
-          autoComplete="off"
-        />
         </div>
-      <div className="form-group ">
-        <label>Confirmation Password</label>
-        <input
-          className="form-control mx-2"
-          type="password"
-          value={enteredConfirmationPassword}
-          onChange={confirmationPasswordChangeHandler}
-          autoComplete="off"
-        />
-      </div>
+        <div className="form-group ">
+          <label>Email</label>
+          <input
+            className="form-control mx-2"
+            type="email"
+            value={enteredEmail}
+            onChange={emailChangeHandler}
+            autoComplete="off"
+          />
+        </div>
+        <div className="form-group ">
+          <label>Password</label>
+          <input
+            className="form-control mx-2"
+            type="password"
+            value={enteredPassword}
+            onChange={passwordChangeHandler}
+            autoComplete="off"
+          />
+        </div>
+        <div className="form-group ">
+          <label>Confirmation Password</label>
+          <input
+            className="form-control mx-2"
+            type="password"
+            value={enteredConfirmationPassword}
+            onChange={confirmationPasswordChangeHandler}
+            autoComplete="off"
+          />
+        </div>
 
         <button type="submit" className="bg-blue-500 text-white">
           SignUp
         </button>
-          {
+        {
             error && <div className="alert alert-danger">{error.message}</div>
           }
       </form>

@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   reservations: reservationReducer,
   room_types: roomTypeReducer,
   token: loginReducer,
-  user: authReducer
+  user: authReducer,
 });
 
 const store = configureStore(
