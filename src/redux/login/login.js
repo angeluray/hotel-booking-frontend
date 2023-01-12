@@ -1,9 +1,13 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 import getTokenAsync from './login-helper';
+import { getRole, isLoggedIn, getUserId } from '../../modules/auth-module';
 
 const initialState = {
   token: '',
+  isLoggedIn: false,
+  role: 'No Role',
+  userId: null,
 };
 
 const loginSlice = createSlice({
@@ -12,6 +16,9 @@ const loginSlice = createSlice({
   reducers: {
     login: (state, action) => {
       state.token = action.payload;
+      state.role = getRole(action.payload);
+      state.isLoggedIn = isLoggedIn(action.payload);
+      state.userId = getUserId(action.payload);
     },
   },
 });
