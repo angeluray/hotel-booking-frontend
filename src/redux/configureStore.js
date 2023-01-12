@@ -5,16 +5,21 @@ import reservationReducer from './reducers/reservationsReducers';
 import cityReducer from './reducers/citiesReducers';
 import roomTypeReducer from './reducers/roomTypesReducers';
 import hotelReducer from './reducers/hotelReducers';
+import loginReducer from './login/login';
 
 const rootReducer = combineReducers({
   hotels: hotelReducer,
   cities: cityReducer,
   reservations: reservationReducer,
   room_types: roomTypeReducer,
+  token: loginReducer,
 });
 
-const store = configureStore({
-  reducer: rootReducer,
-}, applyMiddleware(thunk));
+const store = configureStore(
+  {
+    reducer: rootReducer,
+  },
+  applyMiddleware(thunk),
+);
 
 export default store;
