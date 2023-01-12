@@ -1,4 +1,4 @@
-const loginURL = 'http://127.0.0.1:3000/api/v1/login';
+const loginURL = 'http://127.0.0.1:3000/auth/login';
 
 const getTokenAsync = async () => {
   const response = await fetch(loginURL);
