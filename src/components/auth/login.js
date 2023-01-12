@@ -11,7 +11,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem(tokenKey)) {
-      dispatch(login(localStorage.getItem(tokenKey)));
+      dispatch(login(JSON.parse(localStorage.getItem(tokenKey))));
     }
   }, [dispatch]);
 
