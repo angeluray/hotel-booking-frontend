@@ -1,3 +1,19 @@
 /* body {
   color: rgb(143, 197, 67);
 } */
+
+/* .hide {
+  display: none;
+  transition: all 0.5s ease-in;
+} */
+
+#hide {
+  display: none;
+  transition: all 0.5s ease-in;
+}
+
+@media only screen and (min-width: 768px) { 
+  .navigation {
+    max-width: 15.5rem;
+  }
+}
