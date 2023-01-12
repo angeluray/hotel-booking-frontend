@@ -18,7 +18,7 @@ const loginSlice = createSlice({
 });
 
 export const registerUser = (userInfo) => async () => {
-  await fetch(`${BASE_URL}create`, {
+  await fetch(`${BASE_URL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
