@@ -2,6 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import getTokenAsync from './login-helper';
 
+const BASE_URL = 'http://127.0.0.1:3000/api/v1/users';
 const initialState = {
   token: '',
 };
@@ -15,6 +16,16 @@ const loginSlice = createSlice({
     },
   },
 });
+
+export const registerUser = (userInfo) => async () => {
+  await fetch(`${BASE_URL}create`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userInfo),
+  });
+};
 
 export const { login } = loginSlice.actions;
 
