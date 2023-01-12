@@ -18,9 +18,14 @@ const loginSlice = createSlice({
 
 export const { login } = loginSlice.actions;
 
-export const getMessages = () => async (dispatch) => {
-  const token = await getTokenAsync();
-  dispatch(login(token));
+export const getToken = (loginData) => async (dispatch) => {
+  const data = await getTokenAsync(loginData);
+  dispatch(login(data));
+  if (data.auth) {
+    localStorage.setItem('token', JSON.stringify(data.token));
+  } else {
+    localStorage.setItem('token', '');
+  }
 };
 
 export default loginSlice.reducer;
