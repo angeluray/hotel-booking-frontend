@@ -51,7 +51,7 @@ const Register = () => {
         className="flex flex-col gap-2 items-end p-9 w-sm-3/4"
       >
         <div className="form-group ">
-          <label htmlFor="name">Full Name</label>
+          <label>Full Name</label>
           <input
             className="form-control mx-2"
             type="name"
@@ -81,7 +81,7 @@ const Register = () => {
           />
         </div>
         <div className="form-group ">
-          <label>Confirmation Password</label>
+          <label>confirmationPassword</label>
           <input
             className="form-control mx-2"
             type="password"
