@@ -11,7 +11,7 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      state.token = action.payload.token;
+      state.token = action.payload;
     },
   },
 });
@@ -20,11 +20,13 @@ export const { login } = loginSlice.actions;
 
 export const getToken = (loginData) => async (dispatch) => {
   const data = await getTokenAsync(loginData);
-  dispatch(login(data));
+
   if (data.auth) {
     localStorage.setItem('token', JSON.stringify(data.token));
+    dispatch(login(data.token));
   } else {
     localStorage.setItem('token', '');
+    dispatch(login(''));
   }
 };
 
