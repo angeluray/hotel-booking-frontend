@@ -35,8 +35,12 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
+    <div className="flex w-screen h-screen bg-gray-200 justify-center items-center">
+      <form
+        onSubmit={submitHandler}
+        className="flex flex-col gap-2 items-end p-9 w-sm-3/4"
+      >
+        <img src="R-logo.png" alt="Hotel Logo" />
         <input
           type="email"
           value={enteredEmail}
