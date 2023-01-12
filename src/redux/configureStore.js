@@ -13,8 +13,8 @@ const rootReducer = combineReducers({
   cities: cityReducer,
   reservations: reservationReducer,
   room_types: roomTypeReducer,
-  login: loginReducer,
 
+  login: loginReducer,
   user: authReducer,
 });
 
