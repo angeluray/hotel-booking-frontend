@@ -3,11 +3,13 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DisplayFullCities from './components/cities/cities';
 import store from './redux/Store';
+import Navigation from './components/navigations/humburger';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
+        <Navigation />
         <Routes>
           <Route path="/" element={<DisplayFullCities />} />
         </Routes>
