@@ -106,12 +106,12 @@ const Reserve = () => {
           <button type='button'>Confirm reservation</button>
         </article>
         <article>
-          <h4>Room name:</h4>
+          <h4 className='font-Taxicab text-2xl'>Room name</h4>
           <p>
             description: Lorem Ipsum is simply dummy text of the printing and
             typesetting industry.
           </p>
-          <table>
+          <table cellPadding={4}>
             <tbody>
               <tr>
                 <td>
