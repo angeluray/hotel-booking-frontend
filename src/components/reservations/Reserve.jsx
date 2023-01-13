@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import getToday from '../../modules/getToday';
 import { cities, hotels, roomTypes } from '../../modules/mockupData'; //! This mock up file will be deleted after connect to API
 
