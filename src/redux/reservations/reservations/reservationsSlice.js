@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'https://hotelzilla-api.herokuapp.com/api/reservations';
+const URL = 'localhost:3000/api/v1/reservations';
 
 // create the thunk
 export const fetchUserReservations = createAsyncThunk(
@@ -13,7 +13,7 @@ export const fetchUserReservations = createAsyncThunk(
     });
     const data = await response.json();
     return data;
-  },
+  }
 );
 
 export const createReservation = createAsyncThunk(
@@ -28,7 +28,7 @@ export const createReservation = createAsyncThunk(
       body: JSON.stringify(reservationData),
     });
     return response.json();
-  },
+  }
 );
 
 const initialState = {
