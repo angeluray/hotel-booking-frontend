@@ -8,6 +8,13 @@ function Navigation() {
     color: isActive ? 'rgb(241 245 249)' : 'rgb(51 65 85)',
   });
 
+  const logOutUser = (event) => {
+    event.preventDefault();
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.history.back();
+  };
+
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const handleToggle = () => {
@@ -104,7 +111,7 @@ function Navigation() {
 
           <div className="lg:w-full lg:self-end lg:pb-9">
             <div className="hidden lg:w-full lg:flex lg:justify-center lg:pb-4">
-              <button type="button" className="lg:w-2/4 font-sans font-semibold rounded-md p-2 text-base text-slate-50 transition ease-in-out delay-150 bg-lime-500 hover:-translate-y-1 hover:scale-110 hover:bg-lime-600 duration-300">Log Out</button>
+              <button type="button" onClick={logOutUser} className="lg:w-2/4 font-sans font-semibold rounded-md p-2 text-base text-slate-50 transition ease-in-out delay-150 bg-lime-500 hover:-translate-y-1 hover:scale-110 hover:bg-lime-600 duration-300">Log Out</button>
             </div>
             <a href="https://github.com/angeluray/hotel-booking-backend" className="hidden lg:flex lg:justify-center lg:items-center lg:text-slate-300 lg:hover:underline">
               Source code in
