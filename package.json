@@ -24,8 +24,7 @@
     "redux-axios": "0.0.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "web-vitals": "^2.1.4",
-    "postcss": "^8.4.13"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -64,7 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.13",
     "postcss-import": "^15.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
