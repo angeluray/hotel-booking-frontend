@@ -4,7 +4,7 @@ import getAllHotelsAsync, {
   deleteHotel,
   getHotelsByCity,
   postHotelAsync,
-} from './hotel-helper';
+} from './hotelHelper';
 
 const initialState = {
   all: [],
