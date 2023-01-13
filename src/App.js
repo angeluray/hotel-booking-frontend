@@ -6,6 +6,7 @@ import Navigation from './components/navigations/humburger';
 import configureStore from './redux/configureStore';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
+import Reserve from './components/reservations/Reserve';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<DisplayFullCities />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/reserve" element={<Reserve />} />
         </Routes>
       </Router>
     </Provider>
