@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { registerUser } from '../../redux/login/login';
 
-
 const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -108,9 +107,9 @@ const Register = () => {
         <h3>Do you have an account?</h3>
         <p>Just Login!</p>
         <Link to="/Login">Login</Link>
+      </div>
     </div>
-    </div>
-    
+
   );
 };
 
