@@ -2,92 +2,177 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getToday from '../../modules/getToday';
-import { cities, hotels, roomTypes } from '../../modules/mockupData'; //! This mock up file will be deleted after connect to API
+import { getAllCities } from '../../redux/city/city';
+import { getHotelsByCity } from '../../redux/hotel/hotelHelper';
+import {
+  createReservation,
+  resetCreateReservationStatus,
+} from '../../redux/reservations/reservationsSlice';
+import { getRoomTypes } from '../../redux/roomTypes/roomTypesSlice';
 
-const Reserve = () => {
+const Reserve = ({ token }) => {
+  const dispatch = useDispatch();
+  // Values holders for API fetched data
+  const [cities, setCities] = useState([]);
+  const [hotels, setHotels] = useState([]);
+  const [rooms, setRooms] = useState([]);
+  // Form controllers
+  const [cityId, setCityId] = useState(null);
+  // API request parameters
   const [reservationDate, setReservationDate] = useState(getToday());
-  // todo: connect cities endpoint to fetch all available cities in DB
-  // !This is a mockup connection to simulate an array of objects for cities
-  const fetchedCities = cities;
-  // !This is a mockup connection to simulate an array of objects for hotels
-  const fetchedHotels = hotels;
-  // !This is a mockup connection to simulate an array of objects for roomTypes
-  const fetchedRooms = roomTypes;
+
+  const [hotelId, setHotelId] = useState(null);
+  const [roomTypeId, setRoomTypeId] = useState(null);
+
+  // Get cities and room types from API on component mount => load them to form
+  useEffect(() => {
+    dispatch(getAllCities());
+    dispatch(getRoomTypes(token));
+  }, []);
+  const { all: fetchedCities } = useSelector((state) => state.city);
+  useEffect(() => {
+    setCities(fetchedCities);
+  }, [fetchedCities]);
+  const { types } = useSelector((state) => state.roomTypes);
+  useEffect(() => {
+    setRooms(types);
+  }, [types]);
+
+  // Get hotels from API after choosing a city => load them to form
+  useEffect(() => {
+    dispatch(getHotelsByCity({ token, id: cityId }));
+  }, [cityId]);
+  const { hotelsByCity } = useSelector((state) => state.hotel);
+  useEffect(() => {
+    setHotels(hotelsByCity);
+  }, [hotelsByCity]);
+
+  const handleConfirmation = () => {
+    if (hotelId && roomTypeId) {
+      const reservationData = {
+        date: reservationDate,
+        hotel_id: hotelId,
+        room_type_id: roomTypeId,
+      };
+      console.log(reservationData);
+      dispatch(createReservation({ token, reservationData }));
+    }
+  };
+
+  const { createReservationStatus } = useSelector(
+    (state) => state.reservations
+  );
+  useEffect(() => {
+    if (
+      createReservationStatus === 'fulfilled' ||
+      createReservationStatus === 'rejected'
+    ) {
+      setTimeout(() => {
+        dispatch(resetCreateReservationStatus());
+      }, 3000);
+    }
+  }, [createReservationStatus]);
   return (
-    <section className='flex flex-col w-full h-screen px-6 py-4'>
-      <header className='ml-6 mt-6'>
-        <h2 className='font-Obscura-regular text-3xl'>Add Reservation</h2>
+    <section className='flex h-screen w-full flex-col items-center justify-center px-6 py-4 pt-[22vh]'>
+      {createReservationStatus === 'fulfilled' && (
+        <div className='absolute bottom-4 right-4 z-10 rounded  bg-green-200 px-4 py-2 text-green-700'>
+          Reservation succesfully created!
+          {window.location.reload()}
+        </div>
+      )}
+      {createReservationStatus === 'rejected' && (
+        <div className='absolute bottom-4 right-4 z-10 rounded bg-red-200 px-4 py-2 text-red-700'>
+          Ups! Something went wrong
+        </div>
+      )}
+      <img
+        className='w-sm-6/12 w-4/12 self-center md:hidden'
+        src='logo.png'
+        alt=''
+        onClick={() => navigate('/')}
+      />
+      <header>
+        <h2 className='font-Taxicab text-3xl capitalize text-gray-800'>
+          Add Reservation
+        </h2>
       </header>
-      <div className='flex flex-col md:grid md:grid-cols-2 place-items-center gap-6 items-center justify-center h-full'>
+      <div className='mt-10 flex h-full w-min flex-col items-center gap-6'>
         <article>
           <table cellPadding={4}>
             <tbody>
               <tr>
                 <td>
-                  <label htmlFor='city'>City:</label>
+                  <label htmlFor='city'>Country:</label>
                 </td>
                 <td>
                   <select
                     className='w-48'
                     name='city'
                     id='city'
-                    defaultValue={'defaultSelect'}
+                    value={cityId ? cityId : 'defaultSelect'}
+                    onChange={(e) => setCityId(e.target.value)}
                   >
                     <option value='defaultSelect' disabled>
-                      Select a city:
+                      Select a country:
                     </option>
-                    {fetchedCities.map((city) => (
-                      <option key={city.key} value={city.key}>
+                    {cities.map((city) => (
+                      <option key={city.id} value={city.id}>
                         {city.name}
                       </option>
                     ))}
                   </select>
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <label htmlFor='hotel'>Hotel:</label>
-                </td>
-                <td>
-                  <select
-                    className='w-48'
-                    name='hotel'
-                    id='hotel'
-                    defaultValue={'defaultSelect'}
-                  >
-                    <option value='defaultSelect' disabled>
-                      Select a hotel:
-                    </option>
-                    {fetchedHotels.map((hotel) => (
-                      <option key={hotel.key} value={hotel.key}>
-                        {hotel.name}
+              {cityId && (
+                <tr>
+                  <td>
+                    <label htmlFor='hotel'>Hotel:</label>
+                  </td>
+                  <td>
+                    <select
+                      className='w-48'
+                      name='hotel'
+                      id='hotel'
+                      value={hotelId ? hotelId : 'defaultSelect'}
+                      onChange={(e) => setHotelId(e.target.value)}
+                    >
+                      <option value='defaultSelect' disabled>
+                        Select a hotel:
                       </option>
-                    ))}
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label htmlFor='room'>Room:</label>
-                </td>
-                <td>
-                  <select
-                    className='w-48'
-                    name='roomType'
-                    id='roomType'
-                    defaultValue={'defaultSelect'}
-                  >
-                    <option value='defaultSelect' disabled>
-                      Select a room:
-                    </option>
-                    {fetchedRooms.map((room) => (
-                      <option key={room.key} value={room.key}>
-                        {room.name}
+                      {hotels.map((hotel) => (
+                        <option key={hotel.id} value={hotel.id}>
+                          {hotel.name}
+                        </option>
+                      ))}
+                    </select>
+                  </td>
+                </tr>
+              )}
+              {hotelId && (
+                <tr>
+                  <td>
+                    <label htmlFor='room'>Room:</label>
+                  </td>
+                  <td>
+                    <select
+                      className='w-48'
+                      name='roomType'
+                      id='roomType'
+                      value={roomTypeId ? roomTypeId : 'defaultSelect'}
+                      onChange={(e) => setRoomTypeId(e.target.value)}
+                    >
+                      <option value='defaultSelect' disabled>
+                        Select a room:
                       </option>
-                    ))}
-                  </select>
-                </td>
-              </tr>
+                      {rooms.map((room) => (
+                        <option key={room.id} value={room.id}>
+                          {room.name}
+                        </option>
+                      ))}
+                    </select>
+                  </td>
+                </tr>
+              )}
               <tr>
                 <td>
                   <label htmlFor='date'>Reservation date:</label>
@@ -105,34 +190,32 @@ const Reserve = () => {
               </tr>
             </tbody>
           </table>
-          <button type='button'>Confirm reservation</button>
         </article>
         <article>
-          <h4 className='font-Taxicab text-2xl'>Room name</h4>
-          <p>
-            description: Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry.
-          </p>
-          <table cellPadding={4}>
-            <tbody>
-              <tr>
-                <td>
-                  <strong>Capacity:</strong>
-                </td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>
+          {roomTypeId && (
+            <>
+              <h4 className='font-Taxicab text-2xl'>
+                {rooms[roomTypeId - 1].name}
+              </h4>
+              <p>{rooms[roomTypeId - 1].description}</p>
+              <div className='flex gap-4'>
+                <p>
                   <strong>Price:</strong>
-                </td>
-                <td>$10 USD</td>
-              </tr>
-            </tbody>
-          </table>
-          {/* Convert to a link with the endpoint */}
-          <button type='button'>See room</button>
+                </p>
+                <p>${rooms[roomTypeId - 1].price} USD</p>
+              </div>
+            </>
+          )}
         </article>
+        <button
+          type='button'
+          className='mt-6 self-start rounded-md bg-lime-400 px-4 py-2 font-semibold text-white hover:bg-gray-200'
+          onClick={handleConfirmation}
+        >
+          Confirm reservation
+        </button>
       </div>
+      <BackButton />
     </section>
   );
 };
