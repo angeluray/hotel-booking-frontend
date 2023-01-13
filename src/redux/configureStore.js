@@ -7,6 +7,7 @@ import roomTypeReducer from './reducers/roomTypesReducers';
 import hotelReducer from './reducers/hotelReducers';
 import loginReducer from './login/login';
 import authReducer from './reducers/authReducers';
+import roomTypesReducer from './RoomTypes/roomTypesSlice';
 
 const rootReducer = combineReducers({
   hotels: hotelReducer,
@@ -16,13 +17,14 @@ const rootReducer = combineReducers({
 
   login: loginReducer,
   user: authReducer,
+  roomTypes: roomTypesReducer,
 });
 
 const store = configureStore(
   {
     reducer: rootReducer,
   },
-  applyMiddleware(thunk),
+  applyMiddleware(thunk)
 );
 
 export default store;
