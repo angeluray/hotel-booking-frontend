@@ -9,7 +9,7 @@ import {
   resetCreateReservationStatus,
 } from '../../redux/reservations/reservationsSlice';
 // import { getRoomTypes } from '../../redux/roomTypes/roomTypesSlice';
-import { getRoomTypes } from '../../redux/roomTypes/roomTypesSlice';
+import { getRoomTypes } from '../../redux/RoomTypes/roomTypesSlice';
 
 // eslint-disable-next-line react/prop-types
 const Reserve = ({ token }) => {
