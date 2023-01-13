@@ -12,7 +12,6 @@ const rootReducer = combineReducers({
   hotels: hotelReducer,
   cities: cityReducer,
   reservations: reservationReducer,
-
   login: loginReducer,
   user: authReducer,
   roomTypes: roomTypesReducer,
@@ -22,7 +21,7 @@ const store = configureStore(
   {
     reducer: rootReducer,
   },
-  applyMiddleware(thunk),
+  applyMiddleware(thunk)
 );
 
 export default store;
