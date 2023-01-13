@@ -8,6 +8,7 @@ import {
   createReservation,
   resetCreateReservationStatus,
 } from '../../redux/reservations/reservationsSlice';
+// import { getRoomTypes } from '../../redux/roomTypes/roomTypesSlice';
 import { getRoomTypes } from '../../redux/roomTypes/roomTypesSlice';
 
 // eslint-disable-next-line react/prop-types
@@ -55,7 +56,7 @@ const Reserve = ({ token }) => {
         hotel_id: hotelId,
         room_type_id: roomTypeId,
       };
-      console.log(reservationData);
+      // console.log(reservationData);
       dispatch(createReservation({ token, reservationData }));
     }
   };
