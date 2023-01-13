@@ -7,7 +7,7 @@ import roomTypeReducer from './reducers/roomTypesReducers';
 import hotelReducer from './reducers/hotelReducers';
 import loginReducer from './login/login';
 import authReducer from './reducers/authReducers';
-import roomTypesReducer from './RoomTypes/roomTypesSlice';
+import roomTypesReducer from './roomTypes/roomTypesSlice';
 
 const rootReducer = combineReducers({
   hotels: hotelReducer,
