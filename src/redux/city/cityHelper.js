@@ -1,4 +1,4 @@
-const citiesURL = 'https://hotelzilla-api.herokuapp.com/api/cities';
+const citiesURL = 'https://hotelator.onrender.com/api/v1/cities';
 
 const getAllCitiesAsyc = async () => {
   const response = await fetch(citiesURL);

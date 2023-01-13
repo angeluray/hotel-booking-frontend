@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import getTokenAsync from './login-helper';
 import { isLoggedIn, getRole, getUserId } from '../../modules/auth-module';
 
-const BASE_URL = 'http://127.0.0.1:3000/users';
+const BASE_URL = 'https://hotelator.onrender.com/users';
 const initialState = {
   token: '',
   isLoggedIn: false,

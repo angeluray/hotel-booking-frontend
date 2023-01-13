@@ -11,7 +11,7 @@ const displayHotel = (payload) => ({
 
 // get (load) greetings from API
 export const fetchHotelAPI = () => async (dispatch) => {
-  const response = await axios.get('http://localhost:3000/api/v1/hotels');
+  const response = await axios.get('https://hotelator.onrender.com/api/v1/hotels');
   const hotel = response.data;
   dispatch(displayHotel(hotel));
 };
