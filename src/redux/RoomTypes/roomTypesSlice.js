@@ -1,3 +1,4 @@
+/* eslint no-param-reassign: "error" */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -6,7 +7,7 @@ const initialState = {
 };
 
 export const getRoomTypes = createAsyncThunk('getRoomTypes', async (token) => {
-  const url = 'http://localhost:3000/api/v1/roomTypes'; // Real API URL will be here (not localhost)
+  const url = 'localhost:3000/api/v1/roomTypes'; // TODO: change this to the correct URL when the backend is ready
   const response = await fetch(url, {
     method: 'GET',
     headers: { Authorization: token },
@@ -14,7 +15,6 @@ export const getRoomTypes = createAsyncThunk('getRoomTypes', async (token) => {
   return response.json();
 });
 
-/* eslint no-param-reassign: "error" */
 const roomTypesSlice = createSlice({
   name: 'roomTypes',
   initialState,
