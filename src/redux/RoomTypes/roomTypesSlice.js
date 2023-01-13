@@ -1,4 +1,3 @@
-/* eslint no-param-reassign: "error" */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -19,6 +18,7 @@ const roomTypesSlice = createSlice({
   name: 'roomTypes',
   initialState,
   reducers: {
+    /* eslint no-param-reassign: "error" */
     resetGetRoomTypesStatus(state) {
       state.getRoomStatus = '';
     },
