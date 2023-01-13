@@ -24,7 +24,7 @@ const store = configureStore(
   {
     reducer: rootReducer,
   },
-  applyMiddleware(thunk)
+  applyMiddleware(thunk),
 );
 
 export default store;
