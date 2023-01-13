@@ -6,7 +6,7 @@ import Navigation from './components/navigations/humburger';
 import configureStore from './redux/configureStore';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
-import Reserve from './components/Reserve';
+import Reserve from './components/reservations/Reserve';
 
 function App() {
   return (
