@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'localhost:3000/api/v1/reservations';
+const URL = 'https://hotelator.onrender.com/api/v1/reservations';
 
-// create the thunk
 export const fetchUserReservations = createAsyncThunk(
   'reservations/fetchUserReservations',
   async (token) => {

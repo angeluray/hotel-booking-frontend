@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export const getRoomTypes = createAsyncThunk('getRoomTypes', async (token) => {
-  const url = 'localhost:3000/api/v1/roomTypes'; // TODO: change this to the correct URL when the backend is ready
+  const url = 'https://hotelator.onrender.com/api/v1/roomTypes';
   const response = await fetch(url, {
     method: 'GET',
     headers: { Authorization: token },
