@@ -7,6 +7,7 @@ import configureStore from './redux/configureStore';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
 import Reserve from './components/reservations/Reserve';
+import FormHotel from './components/add/form';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reserve" element={<Reserve />} />
+          <Route path="/add" element={<FormHotel />} />
         </Routes>
       </Router>
     </Provider>
