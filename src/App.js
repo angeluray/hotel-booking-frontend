@@ -7,6 +7,7 @@ import configureStore from './redux/configureStore';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
 import Reserve from './components/reservations/Reserve';
+import Details from './components/details/details';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reserve" element={<Reserve />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
       </Router>
     </Provider>
