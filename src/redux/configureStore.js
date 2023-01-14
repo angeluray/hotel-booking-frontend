@@ -6,26 +6,24 @@
 // import hotelReducer from './reducers/hotelReducers';
 // import loginReducer from './login/login';
 
-import { combineReducers, applyMiddleware } from 'redux';
+import { applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import reservationsReducer from './reservations/reservationsSlice';
 import roomTypesReducer from './RoomTypes/roomTypesSlice';
-import cityReducer from './city/city';
+import cityReducer from './city/cityReducer';
 import hotelReducer from './hotel/hotel';
 import loginReducer from './login/login';
 
-const rootReducer = combineReducers({
-  hotel: hotelReducer,
-  cities: cityReducer,
-  reservations: reservationsReducer,
-  login: loginReducer,
-  type: roomTypesReducer,
-});
-
 const store = configureStore(
   {
-    reducer: rootReducer,
+    reducer: {
+      hotel: hotelReducer,
+      reservations: reservationsReducer,
+      login: loginReducer,
+      type: roomTypesReducer,
+      cities: cityReducer,
+    },
   },
   applyMiddleware(thunk),
 );
