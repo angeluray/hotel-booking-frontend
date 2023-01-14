@@ -71,6 +71,7 @@ const reservationsSlice = createSlice({
   },
 });
 
-export const reservationsReducer = reservationsSlice.reducer;
+const reservationsReducer = reservationsSlice.reducer;
+export default reservationsReducer;
 
 export const { resetCreateReservationStatus } = reservationsSlice.actions;

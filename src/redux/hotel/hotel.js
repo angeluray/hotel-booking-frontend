@@ -16,6 +16,7 @@ const initialState = {
 };
 
 export const getAllHotels = createAsyncThunk('hotels', async () => getAllHotelsAsync());
+
 export const addHotel = createAsyncThunk(
   'add-hotel',
   async ({ token, hotel, goToHome }) => {

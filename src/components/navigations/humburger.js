@@ -151,7 +151,7 @@ function Navigation() {
               <NavLink
                 style={myNavLinksEffect}
                 className="text-primary link flex items-center w-full p-2 gap-x-1 truncate"
-                to="/myadd"
+                to="/add"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
