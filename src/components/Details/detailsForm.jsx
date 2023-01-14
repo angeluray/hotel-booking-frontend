@@ -11,15 +11,15 @@ import ReservationModal from './ReservationModal';
 
 function DetailsForm({ token }) {
   const dispatch = useDispatch();
-  let params = useParams();
-  const roomId = params.roomId;
+  const params = useParams();
+  const { roomId } = params;
 
   useEffect(() => {
     dispatch(getRoomTypes(token));
     dispatch(fetchDetails(roomId));
   }, []);
 
-  let navigateTo = useNavigate();
+  const navigateTo = useNavigate();
 
   const { roomDetails, loading } = useSelector((state) => state.details);
 
@@ -56,12 +56,13 @@ function DetailsForm({ token }) {
     }
   }, [createReservationStatus]);
 
-  if (loading && !getRoomStatus === 'fulfilled')
+  if (loading && !getRoomStatus === 'fulfilled') {
     return (
       <p className='mt-[15%] ml-[35%] font-Taxicab text-2xl text-gray-600'>
         LOADING...
       </p>
     );
+  }
 
   if (roomDetails.length !== 0) {
     return (
@@ -87,7 +88,7 @@ function DetailsForm({ token }) {
               <tbody className='md:text-right'>
                 <tr>
                   <td className='py-1 px-4 text-left'>Rating:</td>
-                  <td className='py-1 px-4'></td>
+                  <td className='py-1 px-4' />
                 </tr>
                 <tr className='bg-gray-200'>
                   <td className='py-1 px-4 text-left'>Country:</td>
@@ -101,8 +102,9 @@ function DetailsForm({ token }) {
                   className='mt-12 rounded-full bg-lime-400 py-3 px-4 text-slate-50 hover:bg-lime-500'
                   onClick={openModal}
                 >
-                  <i className='fa-solid fa-calendar-check mr-2'></i>Reserve
-                  <i className='fa-solid fa-circle-chevron-right ml-4'></i>
+                  <i className='fa-solid fa-calendar-check mr-2' />
+                  Reserve
+                  <i className='fa-solid fa-circle-chevron-right ml-4' />
                 </button>
                 <ReservationModal
                   visible={modalVisible}
