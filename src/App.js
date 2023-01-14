@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DisplayFullCities />} />
           <Route path="/login" element={<Login />} />
+          <Route path=":roomId" element={<Details />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/details" element={<Details />} />
