@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const URL = 'https://hotel-booking-apis.herokuapp.com/api/v1/hotels/';
+const URL = 'https://hotelator.onrender.com/api/v1/hotels/';
 
 export const fetchDetails = createAsyncThunk(
   'rooms/fetchDetails',
@@ -8,7 +8,7 @@ export const fetchDetails = createAsyncThunk(
     const response = await fetch(`${URL}${roomId}`);
     const data = await response.json();
     return data;
-  },
+  }
 );
 
 const initialState = {
