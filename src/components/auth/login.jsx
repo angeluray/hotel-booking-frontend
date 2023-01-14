@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../redux/login/login';
+import { login } from '../../redux/login/loginReducer';
+// import LoginBackButton from './navigation/LoginBackButton';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
+
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
   };
+
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
   };
+
   const submitHandler = (event) => {
     event.preventDefault();
+
     const loginData = {
       email: enteredEmail,
       password: enteredPassword,
     };
+
     dispatch(login(loginData));
   };
 
@@ -36,13 +43,25 @@ const Login = () => {
   }
 
   return (
-    <div className='flex w-screen h-screen bg-gray-200 justify-center items-center'>
+    <div className='flex h-screen w-screen items-center justify-center bg-slate-100'>
+      {/* <LoginBackButton /> */}
       <form
         onSubmit={submitHandler}
-        className='flex flex-col gap-2 items-end p-9 w-sm-3/4'
+        className='w-sm-3/4 flex flex-col gap-2 p-9'
       >
-        <img className='self-center w-4/12 w-sm-6/12' src='logo.png' alt='' />
-        <h2 className='w-full text-center text-3xl'>Login</h2>
+        <div className='w-full flex justify-center'>
+          <div className='w-7/12 sm:w-6/12 md:w-5/12 self-center px-5'>
+            <img
+              className='self-center'
+              src='logo.png'
+              alt=''
+              onClick={() => navigate('/')}
+            />
+          </div>
+        </div>
+        <h2 className='w-full text-center font-Taxicab text-3xl capitalize text-gray-800'>
+          Login
+        </h2>
         <div className='w-full'>
           <label htmlFor='email'>Email</label>
           <input
@@ -52,7 +71,7 @@ const Login = () => {
             value={enteredEmail}
             onChange={emailChangeHandler}
             autoComplete='off'
-            className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
             required
           />
         </div>
@@ -65,19 +84,28 @@ const Login = () => {
             value={enteredPassword}
             onChange={passwordChangeHandler}
             autoComplete='off'
-            className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
             required
           />
         </div>
-        <p id='login-error' className='w-full text-red-600 hidden'>
+        <p id='login-error' className='hidden w-full text-red-600'>
           Please enter a valid name or password
         </p>
         <button
           type='submit'
-          className='bg-blue-500 text-white py-2 appearance-none border rounded px-3 leading-tight focus:outline-none focus:shadow-outline'
+          className='focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight bg-lime-400 text-slate-50 hover:bg-blue-500 focus:outline-none self-end'
         >
           Login
         </button>
+        <p className='text-center text-gray-800 pt-6'>
+          Don't have an account?&nbsp;
+          <NavLink
+            to='/register'
+            className='focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight bg-lime-400 text-slate-50 hover:bg-blue-500 focus:outline-none self-end'
+          >
+            Sign up
+          </NavLink>
+        </p>
       </form>
     </div>
   );

@@ -1,9 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import getTokenAsync from './login-helper';
+import getTokenAsync from './loginHelper';
 import { isLoggedIn, getRole, getUserId } from '../../modules/auth-module';
 
-const BASE_URL = 'https://hotelator.onrender.com/users';
 const initialState = {
   token: '',
   isLoggedIn: false,
@@ -57,26 +56,5 @@ const loginSlice = createSlice({
 });
 
 export const loginActions = loginSlice.actions;
-export const registerUser = (userInfo) => async () => {
-  await fetch(`${BASE_URL}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(userInfo),
-  });
-};
-
-export const getToken = (loginData) => async (dispatch) => {
-  const data = await getTokenAsync(loginData);
-
-  if (data.auth) {
-    localStorage.setItem('token', JSON.stringify(data.token));
-    dispatch(login(data.token));
-  } else {
-    localStorage.setItem('token', '');
-    dispatch(login(''));
-  }
-};
 
 export default loginSlice.reducer;
