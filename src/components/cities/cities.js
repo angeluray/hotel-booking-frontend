@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import cityReducer from '../../redux/reducers/citiesReducers';
-import { fetchCityAPI } from '../../redux/reducers/citiesReducers';
+import { getAllCities } from '../../redux/city/cityReducer';
 
 function DisplayFullCities() {
   const dispatch = useDispatch();
   const displayCities = useSelector((state) => state.cities);
+  console.log(displayCities);
 
   useEffect(() => {
-    dispatch(fetchCityAPI());
+    dispatch(getAllCities());
   }, [dispatch]);
 
   return (
     <div>
-      {displayCities.map((city) => (
+      {
+      displayCities && displayCities.map((city) => (
         <h1 key={city.id}>{city.name}</h1>
-      ))}
+      ))
+      }
     </div>
   );
 }
