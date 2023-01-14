@@ -1,34 +1,37 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const initialState = {
-  name: '',
-  description: '',
-  capacity: '',
-  rating: '',
-  price: '',
-  image: '',
-  reserved: false,
-  hotel: '',
+const URL = 'https://hotel-booking-apis.herokuapp.com/api/v1/hotels/';
+
+export const fetchDetails = createAsyncThunk(
+  'rooms/fetchDetails',
+  async (roomId) => {
+    const response = await fetch(`${URL}${roomId}`);
+    const data = await response.json();
+    return data;
+  },
+);
+
+const initialState = {
+  roomDetails: [],
+  loading: false,
 };
 
-export const detailsSlice = createSlice({
-  name: 'details',
+const detailsSlice = createSlice({
+  name: 'rooms',
   initialState,
-  reducers: {
-    getDetailsSuccess: (state, { payload }) => {
-      // eslint-disable-next-line no-unused-expressions, no-param-reassign
-      state.name = payload.title;
-      // eslint-disable-next-line no-param-reassign
-      state.description = payload.description;
-      // eslint-disable-next-line no-param-reassign
-      state.price = payload.price;
-      // eslint-disable-next-line no-param-reassign
-      state.hotel = payload.brand;
+  reducers: {},
+  extraReducers: {
+    [fetchDetails.pending]: (state) => {
+      state.loading = true;
+    },
+    [fetchDetails.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.roomDetails = payload;
+    },
+    [fetchDetails.rejected]: (state) => {
+      state.loading = false;
     },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { getDetailsSuccess } = detailsSlice.actions;
-
-export default detailsSlice.reducer;
+export const detailsReducer = detailsSlice.reducer;
