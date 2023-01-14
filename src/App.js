@@ -7,7 +7,7 @@ import configureStore from './redux/configureStore';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
 import Reserve from './components/reservations/Reserve';
-import DetailsForm from './components/details/detailsForm';
+import DetailsForm from './components/Details/DetailsForm';
 
 function App() {
   return (
