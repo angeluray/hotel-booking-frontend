@@ -8,6 +8,7 @@ export const initialState = {
   price: '',
   image: '',
   reserved: false,
+  hotel: '',
 };
 
 export const detailsSlice = createSlice({
@@ -21,6 +22,8 @@ export const detailsSlice = createSlice({
       state.description = payload.description;
       // eslint-disable-next-line no-param-reassign
       state.price = payload.price;
+      // eslint-disable-next-line no-param-reassign
+      state.hotel = payload.brand;
     },
   },
 });
