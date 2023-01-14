@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import reservationReducer from './reducers/reservationsReducers';
 import cityReducer from './reducers/citiesReducers';
 import hotelReducer from './reducers/hotelReducers';
-import loginReducer from './login/login';
+import loginReducer from './login/loginReducer';
 import { detailsReducer } from './details/detailsReducer';
 import registerReducer from './register/registerSlice';
 
