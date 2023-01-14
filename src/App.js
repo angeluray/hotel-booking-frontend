@@ -15,11 +15,11 @@ function App() {
       <Router>
         <Navigation />
         <Routes>
-          <Route path='/' element={<DisplayFullCities />} />
-          <Route path='/login' element={<Login />} />
-          <Route path=':roomId' element={<DetailsForm />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/reserve' element={<Reserve />} />
+          <Route path="/" element={<DisplayFullCities />} />
+          <Route path="/login" element={<Login />} />
+          <Route path=":roomId" element={<DetailsForm />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/reserve" element={<Reserve />} />
         </Routes>
       </Router>
     </Provider>
