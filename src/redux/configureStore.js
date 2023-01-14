@@ -6,6 +6,7 @@ import cityReducer from './reducers/citiesReducers';
 import hotelReducer from './reducers/hotelReducers';
 import loginReducer from './login/login';
 import { detailsReducer } from './details/detailsReducer';
+import registerReducer from './register/registerSlice';
 
 const rootReducer = combineReducers({
   hotels: hotelReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   reservations: reservationReducer,
   login: loginReducer,
   details: detailsReducer,
+  register: registerReducer,
 });
 
 const store = configureStore(
