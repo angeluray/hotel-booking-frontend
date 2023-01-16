@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const hostUrl = 'https://hotelator.onrender.com/';
+const hostURL = 'https://hotelator.onrender.com';
 
 function HotelItem({ hotel }) {
   return (

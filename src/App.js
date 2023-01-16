@@ -1,29 +1,48 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import DisplayFullCities from './components/cities/cities';
-import Navigation from './components/navigations/humburger';
-import configureStore from './redux/configureStore';
-import Login from './components/auth/login';
-import Signup from './components/auth/register';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Login from './components/auth/Login';
+import AddHotel from './components/hotels/AddHotel';
+import { loginActions } from './redux/login/loginReducer';
+import LogedUsers from './components/accessibility/LogedUsers';
+import DetailsForm from './components/Details/DetailsForm';
+import IsAdmin from './components/accessibility/IsAdmin';
+import Reservations from './components/reservations/Reservations';
+import RemoveHotel from './components/hotels/removeHotel/RemoveHotel';
+import SignUp from './components/auth/Register';
+import Home from './components/Home';
+import Index from './components/Main';
 import Reserve from './components/reservations/Reserve';
-import DetailsForm from './components/Details/detailsForm';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const tokenKey = 'token';
+  if (localStorage.getItem(tokenKey)) {
+    dispatch(loginActions.login(JSON.parse(localStorage.getItem(tokenKey))));
+  }
+
+  const { isLoggedIn, role, token } = useSelector((state) => state.login);
+
   return (
-    <Provider store={configureStore}>
-      <Router>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<DisplayFullCities />} />
-          <Route path="/login" element={<Login />} />
-          <Route path=":roomId" element={<DetailsForm />} />
-          <Route path="/register" element={<Signup />} />
-          <Route path="/reserve" element={<Reserve />} />
-        </Routes>
-      </Router>
-    </Provider>
+    <Router>
+      <Routes>
+        <Route path="/register" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />}>
+          <Route index element={<Index />} />
+          <Route path=":roomId" element={<DetailsForm token={token} />} />
+          <Route element={<IsAdmin role={role} loggedIn={isLoggedIn} />}>
+            <Route path="add-hotel" element={<AddHotel />} />
+            <Route path="delete-hotel" element={<RemoveHotel />} />
+          </Route>
+          <Route element={<LogedUsers logged={isLoggedIn} />}>
+            <Route path="reserve" element={<Reserve token={token} />} />
+            <Route path="reservations" element={<Reservations />} />
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
