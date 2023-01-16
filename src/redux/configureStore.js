@@ -2,14 +2,14 @@ import { combineReducers, applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import reservationReducer from './reducers/reservationsReducers';
-import cityReducer from './reducers/citiesReducers';
+import cityReducer from './city/cityReducer';
 import hotelReducer from './reducers/hotelReducers';
 import loginReducer from './login/loginReducer';
 import { detailsReducer } from './details/detailsReducer';
 import registerReducer from './register/registerSlice';
 
 const rootReducer = combineReducers({
-  hotels: hotelReducer,
+  hotel: hotelReducer,
   cities: cityReducer,
   reservations: reservationReducer,
   login: loginReducer,

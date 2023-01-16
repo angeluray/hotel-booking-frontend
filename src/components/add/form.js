@@ -9,7 +9,8 @@ import { getAllCities } from '../../redux/city/cityReducer';
 
 const FormHotel = () => {
   const dispatch = useDispatch();
-  const displayFullCities = useSelector((state) => state.cities);
+  const displayFullCities = useSelector((state) => state.cities.all);
+  console.log(displayFullCities);
 
   useEffect(() => {
     dispatch(getAllCities());
@@ -24,8 +25,8 @@ const FormHotel = () => {
     reset();
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit(submitHotel)}>
+    <div className="bg-red-600">
+      <form onSubmit={handleSubmit(submitHotel)} className="flex flex-col bg-red-600">
 
         <input className="myInput" type="text" defaultValue="Los Roques Hotel" {...register('name', { required: true, maxLength: 45 })} />
         {errors.name && <span>Hotel name is required</span>}

@@ -42,7 +42,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-slate-100">
+    <div className="flex h-screen w-screen items-center justify-center">
       {/* <LoginBackButton /> */}
       <form
         onSubmit={submitHandler}
@@ -97,7 +97,7 @@ const Login = () => {
           Login
         </button>
         <p className="text-center text-gray-800 pt-6">
-          Don`&apos;`t have an account?&nbsp;
+          Don&apos;t have an account?&nbsp;
           <NavLink
             to="/register"
             className="focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight bg-lime-400 text-slate-50 hover:bg-blue-500 focus:outline-none self-end"

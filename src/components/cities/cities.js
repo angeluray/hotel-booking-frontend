@@ -4,7 +4,7 @@ import { getAllCities } from '../../redux/city/cityReducer';
 
 function DisplayFullCities() {
   const dispatch = useDispatch();
-  const displayCities = useSelector((state) => state.cities);
+  const displayCities = useSelector((state) => state.cities.all);
   console.log(displayCities);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function DisplayFullCities() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="flex justify-center">
       {
       displayCities && displayCities.map((city) => (
         <h1 key={city.id}>{city.name}</h1>

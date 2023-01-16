@@ -6,7 +6,6 @@ const citiesURL = 'https://hotelator.onrender.com/api/v1/cities';
 const getAllCities = createAsyncThunk('cities', async () => {
   const response = await fetch(citiesURL);
   const data = await response.json();
-  console.log(data);
   return data;
 });
 
