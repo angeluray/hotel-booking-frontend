@@ -1,33 +1,32 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const hostUrl = 'https://hotelator.onrender.com/';
-
 function HotelItem({ hotel }) {
   return (
     <Link to={`/${hotel.id}`}>
-      {
-        <div className='flex flex-col items-center gap-1'>
-          <div className='w-3/6 md:w-auto'>
-            <img
-              src={
+      <div className="flex flex-col items-center gap-1">
+        <div className="w-3/6 md:w-auto">
+          <img
+            src={
                 hotel.image
-                  ? `${hostURL}${hotel.image.url}`
-                  : `http://via.placeholder.com/640x360`
+                  ? `${hotel.image}`
+                  : 'http://via.placeholder.com/640x360'
               }
-              alt={hotel.name}
-            />
-          </div>
-          <div className='flex flex-col gap-3 items-center'>
-            <div>{hotel.name}</div>
-            <div className='text-center'>{`${hotel.description.slice(
+            alt={hotel.name}
+          />
+        </div>
+        <div className="flex flex-col gap-3 items-center">
+          <div>{hotel.name}</div>
+          <div className="text-center">
+            {`${hotel.description.slice(
               0,
-              50
-            )}...`}</div>
+              50,
+            )}...`}
           </div>
         </div>
-      }
+      </div>
     </Link>
   );
 }
