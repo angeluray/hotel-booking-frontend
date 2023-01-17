@@ -17,7 +17,6 @@ const postHotelAsync = async (token, formData) => {
     withCredentials: true,
     body: formData,
   });
-  console.log(response);
   const data = await response.json();
   return data;
 };

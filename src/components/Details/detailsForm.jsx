@@ -19,7 +19,7 @@ function DetailsForm({ token }) {
   useEffect(() => {
     dispatch(getRoomTypes(token));
     dispatch(fetchDetails(roomId));
-  }, []);
+  }, [dispatch, roomId, token]);
 
   const { roomDetails, loading } = useSelector((state) => state.details);
 
@@ -54,7 +54,7 @@ function DetailsForm({ token }) {
         dispatch(resetCreateReservationStatus());
       }, 3000);
     }
-  }, [createReservationStatus]);
+  }, [createReservationStatus, dispatch]);
 
   if (loading && !getRoomStatus === 'fulfilled') {
     return (
@@ -101,6 +101,7 @@ function DetailsForm({ token }) {
                 <button
                   className="mt-12 rounded-full bg-lime-400 py-3 px-4 text-slate-50 hover:bg-lime-500"
                   onClick={openModal}
+                  type="button"
                 >
                   <i className="fa-solid fa-calendar-check mr-2" />
                   Reserve
