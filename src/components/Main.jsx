@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import HotelItem from './hotels/HotelItem';
+import HotelItem from './hotels/hotelItem';
 import { getAllHotels } from '../redux/hotel/hotel';
 
 function Index() {

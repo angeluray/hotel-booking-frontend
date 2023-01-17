@@ -9,7 +9,7 @@ import {
   createReservation,
   resetCreateReservationStatus,
 } from '../../redux/reservations/reservationsSlice';
-import { getRoomTypes } from '../../redux/roomTypes/roomTypesSlice';
+import { getRoomTypes } from '../../redux/RoomTypes/roomTypesSlice';
 import BackButton from '../backButton/BackButton';
 
 // eslint-disable-next-line react/prop-types

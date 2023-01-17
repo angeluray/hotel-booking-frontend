@@ -7,7 +7,7 @@ import hotelReducer from './hotel/hotel';
 import loginReducer from './login/loginReducer';
 import { detailsReducer } from './details/detailsReducer';
 import registerReducer from './register/registerSlice';
-import roomTypesReducer from './roomTypes/roomTypesSlice';
+import roomTypesReducer from './RoomTypes/roomTypesSlice';
 
 const rootReducer = combineReducers({
   hotel: hotelReducer,

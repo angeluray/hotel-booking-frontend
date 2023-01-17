@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import printStars from '../../modules/star/PrintStars';
+import printStars from '../../modules/star/printStars';
 import { fetchUserReservations } from '../../redux/reservations/reservationsSlice';
 import BackButton from '../backButton/BackButton';
 
