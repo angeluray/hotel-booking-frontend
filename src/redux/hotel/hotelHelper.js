@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const hotelURL = 'http://127.0.0.1:4000/api/v1/hotels';
+const hotelURL = 'https://hotelator.onrender.com/api/v1/hotels';
 
 const getAllHotelsAsync = async () => {
   const response = await fetch(hotelURL);
