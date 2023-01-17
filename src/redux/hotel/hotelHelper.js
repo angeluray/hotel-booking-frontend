@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const hotelURL = 'localhost:3000/api/v1/hotels';
+const hotelURL = 'http://127.0.0.1:4000/api/v1/hotels';
 
 const getAllHotelsAsync = async () => {
   const response = await fetch(hotelURL);
@@ -14,8 +14,10 @@ const postHotelAsync = async (token, formData) => {
     headers: {
       Authorization: token,
     },
+    withCredentials: true,
     body: formData,
   });
+  console.log(response);
   const data = await response.json();
   return data;
 };
@@ -35,7 +37,7 @@ export const deleteHotel = createAsyncThunk(
 export const getHotelsByCity = createAsyncThunk(
   'getHotelsByCity',
   async ({ token, id }) => {
-    const url = `localhost:3000/api/v1/hotelbycity/${id}`;
+    const url = `https://hotelator.onrender.com/api/v1/hotelbycity/${id}`;
     const response = await fetch(url, {
       method: 'GET',
       headers: {
