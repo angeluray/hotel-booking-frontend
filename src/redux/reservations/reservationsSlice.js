@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'http://127.0.0.1:4000/api/v1/reservations';
+const URL = 'http://127.0.0.1:4000/api/v1/users/id/reservations';
 
 export const fetchUserReservations = createAsyncThunk(
   'reservations/fetchUserReservations',
@@ -41,7 +41,6 @@ const reservationsSlice = createSlice({
   name: 'reservations',
   initialState,
   reducers: {
-    /* eslint no-param-reassign: "error" */
     resetCreateReservationStatus(state) {
       state.createReservationStatus = '';
     },
