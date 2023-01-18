@@ -37,7 +37,7 @@ export const deleteHotel = createAsyncThunk(
 export const getHotelsByCity = createAsyncThunk(
   'getHotelsByCity',
   async ({ token, id }) => {
-    const url = `https://hotelator.onrender.com/api/v1/hotelbycity/${id}`;
+    const url = `http://127.0.0.1:4000/api/v1/hotelbycity/${id}`;
     const response = await fetch(url, {
       method: 'GET',
       headers: {
