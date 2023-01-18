@@ -1,4 +1,4 @@
-const loginURL = 'http://127.0.0.1:4000/auth/login';
+const loginURL = 'https://hotelator.onrender.com/auth/login';
 
 const getTokenAsync = async (loginData) => {
   const response = await fetch(loginURL, {

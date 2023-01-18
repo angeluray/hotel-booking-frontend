@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable radix */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getRoomTypes } from '../../redux/RoomTypes/roomTypesSlice';
 import BackButton from '../backButton/BackButton';
 import ReservationModal from './ReservationModal';
@@ -22,7 +24,7 @@ function DetailsForm({ token }) {
     dispatch(fetchDetails(roomId));
   }, [dispatch, roomId, token]);
 
-  const navigateTo = useNavigate();
+  // const navigateTo = useNavigate();
 
   const { roomDetails, loading } = useSelector((state) => state.details);
 
