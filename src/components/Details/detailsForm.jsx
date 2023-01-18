@@ -1,15 +1,16 @@
-/* eslint-disable radix */
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { getRoomTypes } from '../../redux/RoomTypes/roomTypesSlice';
+import BackButton from '../backButton/BackButton';
+import ReservationModal from './ReservationModal';
+import handleImage from '../../modules/image/handleImage';
+import printStars from '../../modules/star/printStars';
 import { fetchDetails } from '../../redux/details/detailsReducer';
 import {
   createReservation,
   resetCreateReservationStatus,
 } from '../../redux/reservations/reservationsSlice';
-import { getRoomTypes } from '../../redux/RoomTypes/roomTypesSlice';
-import ReservationModal from './ReservationModal';
 
 function DetailsForm({ token }) {
   const dispatch = useDispatch();
@@ -21,8 +22,11 @@ function DetailsForm({ token }) {
     dispatch(fetchDetails(roomId));
   }, [dispatch, roomId, token]);
 
+  const navigateTo = useNavigate();
+
   const { roomDetails, loading } = useSelector((state) => state.details);
 
+  // Modal controllers
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => {
     setModalVisible(true);
@@ -78,7 +82,11 @@ function DetailsForm({ token }) {
               Ups! Something went wrong
             </div>
           )}
-
+          <img
+            src={handleImage(roomDetails.image)}
+            alt="placeholder"
+            className="w-3/5 sm:w-2/5"
+          />
           <div className="flex flex-col items-center md:items-end">
             <h2 className="mb-3 font-Taxicab text-3xl font-bold capitalize text-gray-800">
               {roomDetails.name.toUpperCase()}
@@ -88,7 +96,9 @@ function DetailsForm({ token }) {
               <tbody className="md:text-right">
                 <tr>
                   <td className="py-1 px-4 text-left">Rating:</td>
-                  <td className="py-1 px-4" />
+                  <td className="py-1 px-4">
+                    {printStars(roomDetails.rating)}
+                  </td>
                 </tr>
                 <tr className="bg-gray-200">
                   <td className="py-1 px-4 text-left">Country:</td>
@@ -117,6 +127,7 @@ function DetailsForm({ token }) {
               </>
             )}
           </div>
+          <BackButton />
         </section>
       </div>
     );

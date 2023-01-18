@@ -68,7 +68,7 @@ const SignUp = () => {
           <div className="w-7/12 self-center px-5 sm:w-6/12 md:w-5/12">
             <img
               className="self-center"
-              src="logo.png"
+              src="/static/logo.png"
               alt=""
               onClick={() => navigate('/')}
             />
