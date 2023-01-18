@@ -7,8 +7,11 @@ import { loginActions } from './redux/login/loginReducer';
 import LogedUsers from './components/accessibility/LogedUsers';
 import DetailsForm from './components/Details/detailsForm';
 import IsAdmin from './components/accessibility/isAdmin';
+import Reservations from './components/reservations/Reservations';
 import RemoveHotel from './components/hotels/removeHotel/RemoveHotel';
 import SignUp from './components/auth/register';
+import Home from './components/Home';
+import Index from './components/Main';
 import Reserve from './components/reservations/Reserve';
 
 const App = () => {
@@ -25,7 +28,8 @@ const App = () => {
       <Routes>
         <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route>
+        <Route path="/" element={<Home />}>
+          <Route index element={<Index />} />
           <Route path=":roomId" element={<DetailsForm token={token} />} />
           <Route element={<IsAdmin role={role} loggedIn={isLoggedIn} />}>
             <Route path="add-hotel" element={<AddHotel />} />
@@ -33,6 +37,7 @@ const App = () => {
           </Route>
           <Route element={<LogedUsers logged={isLoggedIn} />}>
             <Route path="reserve" element={<Reserve token={token} />} />
+            <Route path="reservations" element={<Reservations />} />
           </Route>
         </Route>
       </Routes>
