@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 function HotelItem({ hotel }) {
   return (
     <Link to={`/${hotel.id}`}>
-      <div className='flex flex-col items-center gap-1'>
-        <div className='w-3/6 md:w-auto'>
+      <div className="flex flex-col items-center gap-1">
+        <div className="w-3/6 md:w-auto">
           <img
             src={
               hotel.image
@@ -17,9 +17,9 @@ function HotelItem({ hotel }) {
             alt={hotel.name}
           />
         </div>
-        <div className='flex flex-col gap-3 items-center'>
+        <div className="flex flex-col gap-3 items-center">
           <div>{hotel.name}</div>
-          <div className='text-center'>
+          <div className="text-center">
             {`${hotel.description.slice(0, 50)}...`}
           </div>
         </div>
