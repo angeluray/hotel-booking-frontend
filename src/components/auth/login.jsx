@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, NavLink } from 'react-router-dom';
 
 import { login } from '../../redux/login/loginReducer';
-// import LoginBackButton from './navigation/LoginBackButton';
+import LoginBackButton from '../backButton/LoginBackButton';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-slate-100">
-      {/* <LoginBackButton /> */}
+      <LoginBackButton />
       <form
         onSubmit={submitHandler}
         className="w-sm-3/4 flex flex-col gap-2 p-9"
