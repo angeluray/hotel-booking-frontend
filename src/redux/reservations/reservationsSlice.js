@@ -12,7 +12,7 @@ export const fetchUserReservations = createAsyncThunk(
     });
     const data = await response.json();
     return data;
-  }
+  },
 );
 
 export const createReservation = createAsyncThunk(
@@ -27,7 +27,7 @@ export const createReservation = createAsyncThunk(
       body: JSON.stringify(reservationData),
     });
     return response.json();
-  }
+  },
 );
 
 const initialState = {

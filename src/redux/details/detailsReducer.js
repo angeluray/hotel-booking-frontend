@@ -8,7 +8,7 @@ export const fetchDetails = createAsyncThunk(
     const response = await fetch(`${URL}${roomId}`);
     const data = await response.json();
     return data;
-  }
+  },
 );
 
 const initialState = {
