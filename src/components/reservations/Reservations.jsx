@@ -5,7 +5,7 @@ import printStars from '../../modules/star/printStars';
 import { fetchUserReservations } from '../../redux/reservations/reservationsSlice';
 import BackButton from '../backButton/BackButton';
 
-function Reservations() {
+const Reservations = () => {
   const navigate = useNavigate();
   const { reservations, loading, rejected } = useSelector(
     (state) => state.reservations
@@ -20,12 +20,13 @@ function Reservations() {
 
   const reservationsArr = reservations;
 
-  if (loading)
+  if (loading) {
     return (
       <p className='mt-[15%] ml-[35%] font-Taxicab text-2xl text-gray-600'>
         LOADING...
       </p>
     );
+  }
 
   if (rejected) return <p>Oops...Something went wrong here!</p>;
 
@@ -88,6 +89,6 @@ function Reservations() {
       <BackButton />
     </div>
   );
-}
+};
 
 export default Reservations;
