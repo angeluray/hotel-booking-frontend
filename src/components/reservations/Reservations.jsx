@@ -53,37 +53,35 @@ const Reservations = () => {
 
         <div className='h-[calc(100vh-400px)] w-[80%] overflow-y-auto'>
           {reservationsArr &&
-            reservationsArr.map((reservation) => {
-              return (
-                <tr
-                  key={reservation.id}
-                  className='flex w-full items-center justify-between even:bg-white'
-                >
-                  <p className='w-10 flex-auto font-bold text-gray-400'>
-                    {reservation.room_type.name}
-                  </p>
-                  <p className='w-0 flex-auto py-4 sm:mr-12'>
-                    {reservation.hotel.name}
-                  </p>
-                  <p className='w-0 flex-auto py-4'>
-                    <>
-                      <div className='hidden md:block'>
-                        {printStars(reservation.hotel.rating)}
-                      </div>
-                      <div className='block text-center md:hidden'>
-                        {reservation.hotel.rating}
-                      </div>
-                    </>
-                  </p>
-                  <p className='hidden w-0 flex-auto py-4 text-right sm:block'>
-                    {reservation.date}
-                  </p>
-                  <p className='w-0 flex-auto py-4 text-right sm:pl-8'>
-                    ${reservation.room_type.price}
-                  </p>
-                </tr>
-              );
-            })}
+            reservationsArr.map((reservation) => (
+              <tr
+                key={reservation.id}
+                className='flex w-full items-center justify-between even:bg-white'
+              >
+                <p className='w-10 flex-auto font-bold text-gray-400'>
+                  {reservation.room_type.name}
+                </p>
+                <p className='w-0 flex-auto py-4 sm:mr-12'>
+                  {reservation.hotel.name}
+                </p>
+                <p className='w-0 flex-auto py-4'>
+                  <>
+                    <div className='hidden md:block'>
+                      {printStars(reservation.hotel.rating)}
+                    </div>
+                    <div className='block text-center md:hidden'>
+                      {reservation.hotel.rating}
+                    </div>
+                  </>
+                </p>
+                <p className='hidden w-0 flex-auto py-4 text-right sm:block'>
+                  {reservation.date}
+                </p>
+                <p className='w-0 flex-auto py-4 text-right sm:pl-8'>
+                  ${reservation.room_type.price}
+                </p>
+              </tr>
+            ))}
         </div>
       </section>
       <BackButton />
