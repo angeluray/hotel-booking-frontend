@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export const registerThunk = createAsyncThunk('register', async (formData) => {
-  const url = 'https://hotelator.onrender.com/users';
+  const url = 'http://127.0.0.1:4000/users';
   const response = await fetch(url, {
     method: 'POST',
     headers: {

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'https://hotelator.onrender.com/api/v1/reservations';
+const URL = 'http://127.0.0.1:4000/api/v1/reservations';
 
 export const fetchUserReservations = createAsyncThunk(
   'reservations/fetchUserReservations',
@@ -12,7 +12,7 @@ export const fetchUserReservations = createAsyncThunk(
     });
     const data = await response.json();
     return data;
-  },
+  }
 );
 
 export const createReservation = createAsyncThunk(
@@ -27,7 +27,7 @@ export const createReservation = createAsyncThunk(
       body: JSON.stringify(reservationData),
     });
     return response.json();
-  },
+  }
 );
 
 const initialState = {

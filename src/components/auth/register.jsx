@@ -5,7 +5,7 @@ import {
   registerThunk,
   resetCreation,
 } from '../../redux/register/registerSlice';
-// import LoginBackButton from './navigation/LoginBackButton';
+import LoginBackButton from '../backButton/LoginBackButton';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const SignUp = () => {
 
   return (
     <div className='flex h-screen w-screen items-center justify-center bg-slate-100'>
-      {/* <LoginBackButton /> */}
+      <LoginBackButton />
       <form
         onSubmit={handleSubmit}
         className='w-sm-3/4 flex flex-col gap-2 p-9'
@@ -67,7 +67,7 @@ const SignUp = () => {
           <div className='w-7/12 self-center px-5 sm:w-6/12 md:w-5/12'>
             <img
               className='self-center'
-              src='logo.png'
+              src='/static/logo.png'
               alt=''
               onClick={() => navigate('/')}
             />
@@ -119,7 +119,7 @@ const SignUp = () => {
             required
           />
         </div>
-<div className='w-full'>
+        <div className='w-full'>
           <label htmlFor='name'>Password</label>
           <input
             className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'

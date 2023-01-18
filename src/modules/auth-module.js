@@ -32,6 +32,10 @@ const getUserId = (token) => {
   return null;
 };
 
+const logout = () => {
+  localStorage.removeItem('token');
+};
+
 export {
-  isLoggedIn, isLoggedOut, getRole, getUserId,
+  isLoggedIn, isLoggedOut, getRole, getUserId, logout,
 };
