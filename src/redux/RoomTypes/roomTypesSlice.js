@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export const getRoomTypes = createAsyncThunk('getRoomTypes', async (token) => {
-  const url = 'http://127.0.0.1:4000/api/v1/roomTypes';
+  const url = 'http://127.0.0.1:4000/api/v1/room_types';
   const response = await fetch(url, {
     method: 'GET',
     headers: { Authorization: token },
