@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# Hotel Booking frontend-Project
+#### Link to Rails App [Hotel Booking Backend](https://github.com/angeluray/hotel-booking-backend.git)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Description  
+Hotel Booking Frontend is a Hotel Booking application where the user can register new accounts, login and reserve a set of different Hotels. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
+
+## Built With
+- HTML
+- JS
+- Tailwind
+- CSS
+- JSX
+- ReactJS
+- Redux
 
 ## Screenshots
 
@@ -12,11 +23,31 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ![image_2023-01-19_19-04-03](https://user-images.githubusercontent.com/97189760/213582560-a72aaa97-70a9-40a1-a751-4165db79099f.png)
 ![image_2023-01-19_19-06-00](https://user-images.githubusercontent.com/97189760/213582599-cd6585ad-80df-4ac3-8e15-f12a3abe3006.png)
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+This is an example of how you may give instructions on setting up your project locally. Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.
 
-### `npm start`
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+ - IDE(code editor) like: **Vscode**, **Sublime**, etc.  
+ - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+
+
+### To launch the project locally:
+
+#### Step 1:
+- Clone this repo locally using git and the following git command
+
+  ```sh
+  git clone https://github.com/angeluray/hotel-booking-frontend.git
+  ```
+
+#### Step 2:
+
+ ```sh
+  npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -24,57 +55,76 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+<!-- AUTHORS -->
+## 👥 Authors <a name="authors"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div id="badges"align="center">
 
-### `npm run build`
+## 👤 *Tadesse Jemal*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</div>
+<div id="badges"align="center">
+  <a href="https://www.linkedin.com/in/tadesse-jemal-7b7058204/">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="https://github.com/Tadessejemal1/Tadessejemal1">
+    <img src="https://img.shields.io/badge/github-black?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge"/>
+  </a>
+  <a href="https://twitter.com/TadesseJemal2">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+  </a>
+</div>
+<div id="badges"align="center">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 👤 *Angel uray*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+</div>
 
-### `npm run eject`
+<div id="badges"align="center">
+  <a href="www.linkedin.com/in/angeluray-jobs">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="https://github.com/angeluray">
+    <img src="https://img.shields.io/badge/github-black?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge"/>
+  </a>
+  <a href="https://twitter.com/atangeluray">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+  </a>
+</div>
+<div id="badges"align="center">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 👤 *Kumilachew Getie*
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<div id="badges"align="center">
+  <a href="https://www.linkedin.com/in/kumilachew-getie-0356bb157/">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="https://github.com/Kumilachew-g/">
+    <img src="https://img.shields.io/badge/github-black?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge"/>
+  </a>
+  <a href="https://github.com/Kumilachew-g/">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+  </a>
+</div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
+## 🤝 Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions, issues, and feature requests are welcome!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to check the [issues page](../../issues/).
 
-### Code Splitting
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Give a ⭐️ if you like this project!
 
-### Analyzing the Bundle Size
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- We want to say thank you to [Murat Korkmaz](https://www.behance.net/muratk) on Behance the creator of this beautiful [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) that we used as a guide to build our project.
 
-### Making a Progressive Web App
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.
