@@ -18,7 +18,7 @@ export const fetchUserReservations = createAsyncThunk(
 export const createReservation = createAsyncThunk(
   'createReservation',
   async ({ token, reservationData }) => {
-    const response = await fetch(URL, {
+    const response = await fetch(`https://hotelator.onrender.com/api/v1/users/${reservationData.user_id}/reservations`, {
       method: 'POST',
       headers: {
         Authorization: token,
