@@ -28,6 +28,7 @@ function DetailsForm({ token }) {
   // const navigateTo = useNavigate();
 
   const { roomDetails, loading } = useSelector((state) => state.details);
+  const displayUser = useSelector((state) => state.login);
 
   // Modal controllers
   const [modalVisible, setModalVisible] = useState(false);
@@ -39,6 +40,7 @@ function DetailsForm({ token }) {
       date,
       hotel_id: roomDetails.id,
       room_type_id: parseInt(room),
+      user_id: displayUser.userId,
     };
     dispatch(createReservation({ token, reservationData }));
     setModalVisible(false);
