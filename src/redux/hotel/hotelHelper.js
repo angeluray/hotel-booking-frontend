@@ -17,7 +17,6 @@ const postHotelAsync = async (token, formData) => {
     withCredentials: true,
     body: formData,
   });
-  console.log(response);
   const data = await response.json();
   return data;
 };
@@ -37,7 +36,7 @@ export const deleteHotel = createAsyncThunk(
 export const getHotelsByCity = createAsyncThunk(
   'getHotelsByCity',
   async ({ token, id }) => {
-    const url = `https://hotelator.onrender.com/api/v1/hotelbycity/${id}`;
+    const url = `https://hotelator.onrender.com/api/v1/cities/${id}`;
     const response = await fetch(url, {
       method: 'GET',
       headers: {

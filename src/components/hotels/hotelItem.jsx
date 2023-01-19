@@ -10,20 +10,17 @@ function HotelItem({ hotel }) {
         <div className="w-3/6 md:w-auto">
           <img
             src={
-                hotel.image
-                  ? `${hotel.image}`
-                  : 'http://via.placeholder.com/640x360'
-              }
+              hotel.image
+                ? `${hotel.image}`
+                : 'http://via.placeholder.com/640x360'
+            }
             alt={hotel.name}
           />
         </div>
         <div className="flex flex-col gap-3 items-center">
           <div>{hotel.name}</div>
           <div className="text-center">
-            {`${hotel.description.slice(
-              0,
-              50,
-            )}...`}
+            {`${hotel.description.slice(0, 50)}...`}
           </div>
         </div>
       </div>

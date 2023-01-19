@@ -42,7 +42,6 @@ const AddHotel = () => {
       formData.append('rating', newHotel.rating);
       formData.append('image', newHotel.image);
       formData.append('city_id', newHotel.city);
-      console.log(formData);
       dispatch(
         addHotel({
           hotel: formData,

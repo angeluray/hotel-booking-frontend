@@ -1,15 +1,16 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'https://hotelator.onrender.com/api/v1/reservations';
-
 export const fetchUserReservations = createAsyncThunk(
   'reservations/fetchUserReservations',
-  async (token) => {
-    const response = await fetch(URL, {
-      headers: {
-        Authorization: token,
+  async (stateData) => {
+    const response = await fetch(
+      `https://hotelator.onrender.com/api/v1/users/${stateData.user_id}/reservations`,
+      {
+        headers: {
+          Authorization: stateData.token,
+        },
       },
-    });
+    );
     const data = await response.json();
     return data;
   },
@@ -18,14 +19,17 @@ export const fetchUserReservations = createAsyncThunk(
 export const createReservation = createAsyncThunk(
   'createReservation',
   async ({ token, reservationData }) => {
-    const response = await fetch(URL, {
-      method: 'POST',
-      headers: {
-        Authorization: token,
-        'Content-Type': 'application/json',
+    const response = await fetch(
+      `https://hotelator.onrender.com/api/v1/users/${reservationData.user_id}/reservations`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: token,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reservationData),
       },
-      body: JSON.stringify(reservationData),
-    });
+    );
     return response.json();
   },
 );
@@ -41,7 +45,6 @@ const reservationsSlice = createSlice({
   name: 'reservations',
   initialState,
   reducers: {
-    /* eslint no-param-reassign: "error" */
     resetCreateReservationStatus(state) {
       state.createReservationStatus = '';
     },

@@ -1,6 +1,8 @@
+// import { FormatAlignCenter } from '@mui/icons-material';
+// import { display } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import getToday from '../../modules/getToday';
 import { getAllCities } from '../../redux/city/cityReducer';
 import { getHotelsByCity } from '../../redux/hotel/hotelHelper';
@@ -8,12 +10,15 @@ import {
   createReservation,
   resetCreateReservationStatus,
 } from '../../redux/reservations/reservationsSlice';
-// import { getRoomTypes } from '../../redux/roomTypes/roomTypesSlice';
 import { getRoomTypes } from '../../redux/RoomTypes/roomTypesSlice';
+import BackButton from '../backButton/BackButton';
 
 // eslint-disable-next-line react/prop-types
 const Reserve = ({ token }) => {
   const dispatch = useDispatch();
+
+  const displayUser = useSelector((state) => state.login);
+
   // Values holders for API fetched data
   const [cities, setCities] = useState([]);
   const [hotels, setHotels] = useState([]);
@@ -22,11 +27,11 @@ const Reserve = ({ token }) => {
   const [cityId, setCityId] = useState(null);
   // API request parameters
   const [reservationDate, setReservationDate] = useState(getToday());
-
   const [hotelId, setHotelId] = useState(null);
   const [roomTypeId, setRoomTypeId] = useState(null);
 
-  // Get cities and room types from API on component mount => load them to form
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(getAllCities());
     dispatch(getRoomTypes(token));
@@ -42,7 +47,9 @@ const Reserve = ({ token }) => {
 
   // Get hotels from API after choosing a city => load them to form
   useEffect(() => {
-    dispatch(getHotelsByCity({ token, id: cityId }));
+    if (cityId) {
+      dispatch(getHotelsByCity({ token, id: cityId }));
+    }
   }, [cityId, dispatch, token]);
   const { hotelsByCity } = useSelector((state) => state.hotel);
   useEffect(() => {
@@ -55,8 +62,8 @@ const Reserve = ({ token }) => {
         date: reservationDate,
         hotel_id: hotelId,
         room_type_id: roomTypeId,
+        user_id: displayUser.userId,
       };
-      // console.log(reservationData);
       dispatch(createReservation({ token, reservationData }));
     }
   };
@@ -74,6 +81,7 @@ const Reserve = ({ token }) => {
       }, 3000);
     }
   }, [createReservationStatus, dispatch]);
+
   return (
     <section className="flex h-screen w-full flex-col items-center justify-center px-6 py-4 pt-[22vh]">
       {createReservationStatus === 'fulfilled' && (
@@ -89,9 +97,9 @@ const Reserve = ({ token }) => {
       )}
       <img
         className="w-sm-6/12 w-4/12 self-center md:hidden"
-        src="logo.png"
+        src="/static/logo.png"
         alt=""
-        // onClick={() => navigate('/')}
+        onClick={() => navigate('/')}
       />
       <header>
         <h2 className="font-Taxicab text-3xl capitalize text-gray-800">
@@ -222,7 +230,7 @@ const Reserve = ({ token }) => {
           Confirm reservation
         </button>
       </div>
-      {/* <BackButton /> */}
+      <BackButton />
     </section>
   );
 };
