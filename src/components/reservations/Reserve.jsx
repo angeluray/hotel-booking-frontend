@@ -1,4 +1,5 @@
 // import { FormatAlignCenter } from '@mui/icons-material';
+// import { display } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +16,9 @@ import BackButton from '../backButton/BackButton';
 // eslint-disable-next-line react/prop-types
 const Reserve = ({ token }) => {
   const dispatch = useDispatch();
+
+  const displayUser = useSelector((state) => state.login);
+
   // Values holders for API fetched data
   const [cities, setCities] = useState([]);
   const [hotels, setHotels] = useState([]);
@@ -58,6 +62,7 @@ const Reserve = ({ token }) => {
         date: reservationDate,
         hotel_id: hotelId,
         room_type_id: roomTypeId,
+        user_id: displayUser.userId,
       };
       dispatch(createReservation({ token, reservationData }));
     }
