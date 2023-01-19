@@ -10,12 +10,12 @@ const Reservations = () => {
   const { reservations, loading, rejected } = useSelector(
     (state) => state.reservations,
   );
-  const token = useSelector((state) => state.login.token);
+  const stateData = useSelector((state) => state.login);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUserReservations(token));
+    dispatch(fetchUserReservations(stateData));
   }, []);
 
   const reservationsArr = reservations;

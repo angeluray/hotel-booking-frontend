@@ -58,7 +58,7 @@ function NavBar() {
           <img src="/static/logo.png" alt="Hotelzilla Logo" />
         </Link>
         <div className="flex w-full flex-col pl-2 pt-12 text-gray-600">
-          {role !== 'Admin' && loggedIn && (
+          {role === 'Admin' && loggedIn && (
             <>
               <NavLink
                 to="/add-hotel"
