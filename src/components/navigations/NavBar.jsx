@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { logout } from '../../modules/auth-module';
-import { loginActions } from '../../redux/login/loginReducer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { logout } from '../../modules/auth-module';
+import { loginActions } from '../../redux/login/loginReducer';
 
 function NavBar() {
   const { isLoggedIn: loggedIn, role } = useSelector((state) => state.login);
@@ -55,7 +55,7 @@ function NavBar() {
           className='px-4 md:px-6 lg:px-8'
           to='/'
         >
-          <img src='/static/logo.png' alt='Hotelzilla Logo' />
+          <img src='/static/logo.png' alt='Hotelator Logo' />
         </Link>
         <div className='flex w-full flex-col pl-2 pt-12 text-gray-600'>
           {role !== 'Admin' && loggedIn && (
@@ -64,8 +64,9 @@ function NavBar() {
                 to='/add-hotel'
                 onClick={() => setMenuVisible(false)}
                 className={({ isActive }) =>
-                  (isActive ? 'bg-lime-400 text-slate-50' : '') +
-                  ' py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50'
+                  `${
+                    isActive ? 'bg-lime-400 text-slate-50' : ''
+                  } py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50`
                 }
               >
                 ADD HOTEL
@@ -74,8 +75,9 @@ function NavBar() {
                 to='/delete-hotel'
                 onClick={() => setMenuVisible(false)}
                 className={({ isActive }) =>
-                  (isActive ? 'bg-lime-400 text-slate-50' : '') +
-                  ' py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50'
+                  `${
+                    isActive ? 'bg-lime-400 text-slate-50' : ''
+                  } py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50`
                 }
               >
                 DELETE HOTEL
@@ -116,8 +118,9 @@ function NavBar() {
                 to='/reserve'
                 onClick={() => setMenuVisible(false)}
                 className={({ isActive }) =>
-                  (isActive ? 'bg-lime-400 text-slate-50' : '') +
-                  ' py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50'
+                  `${
+                    isActive ? 'bg-lime-400 text-slate-50' : ''
+                  } py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50`
                 }
               >
                 RESERVE
@@ -126,8 +129,9 @@ function NavBar() {
                 to='/reservations'
                 onClick={() => setMenuVisible(false)}
                 className={({ isActive }) =>
-                  (isActive ? 'bg-lime-400 text-slate-50' : '') +
-                  ' py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50'
+                  `${
+                    isActive ? 'bg-lime-400 text-slate-50' : ''
+                  } py-2 pl-2 font-[Taxicab] text-xl font-bold  hover:bg-lime-400 hover:text-slate-50`
                 }
               >
                 MY RESERVATIONS
@@ -144,11 +148,11 @@ function NavBar() {
         </div>
         <footer className='mt-auto flex flex-col items-center'>
           <div className='mb-2 flex w-full justify-around'>
-            <i className='fa-brands fa-twitter text-gray-600'></i>
-            <i className='fa-brands fa-facebook-f text-gray-600'></i>
-            <i className='fa-brands fa-google-plus-g text-gray-600'></i>
-            <i className='fa-brands fa-vimeo-v text-gray-600'></i>
-            <i className='fa-brands fa-pinterest-p text-gray-600'></i>
+            <i className='fa-brands fa-twitter text-gray-600' />
+            <i className='fa-brands fa-facebook-f text-gray-600' />
+            <i className='fa-brands fa-google-plus-g text-gray-600' />
+            <i className='fa-brands fa-vimeo-v text-gray-600' />
+            <i className='fa-brands fa-pinterest-p text-gray-600' />
           </div>
           <p className='text-xs text-gray-600'>©2023 Hotelator</p>
         </footer>
