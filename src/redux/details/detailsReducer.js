@@ -5,7 +5,7 @@ const URL = 'https://hotelator.onrender.com/api/v1/hotels/';
 export const fetchDetails = createAsyncThunk(
   'rooms/fetchDetails',
   async (roomId) => {
-    const response = await fetch(`${URL}${roomId}`);
+    const response = await fetch(`${URL + roomId}`);
     const data = await response.json();
     return data;
   },
