@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 /* eslint-disable radix */
 import React, { useEffect, useState } from 'react';
@@ -22,7 +23,7 @@ function DetailsForm({ token }) {
   useEffect(() => {
     dispatch(getRoomTypes(token));
     dispatch(fetchDetails(roomId));
-  }, [dispatch, roomId, token]);
+  }, []);
 
   // const navigateTo = useNavigate();
 

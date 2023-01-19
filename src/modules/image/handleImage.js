@@ -1,4 +1,4 @@
-const hostURL = 'http://127.0.0.1:4000';
+const hostURL = 'https://hotelator.onrender.com';
 
 const handleImage = (img) => (img
   ? `${hostURL}${img.url}`
