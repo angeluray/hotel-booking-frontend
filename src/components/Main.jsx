@@ -50,15 +50,15 @@ function Index() {
   };
 
   return (
-    <div className="flex items-center">
-      <div className="flex h-screen items-center justify-center">
+    <div className='flex items-center'>
+      <div className='flex h-screen items-center justify-center'>
         <i
           className={`fa-solid fa-caret-left absolute left-0 h-[50px] rounded-r-full bg-gray-200 py-4 px-6 text-slate-50 md:left-[20%] ${
             inactiveDown ? 'hover:not' : 'hover:bg-lime-400'
           }`}
           onClick={handlePageDown}
         />
-        <div className="grid w-10/12 grid-cols-1 gap-3 p-5 md:grid-cols-3 md:grid-rows-1 sm:">
+        <div className='grid w-10/12 grid-cols-1 gap-3 p-5 md:grid-cols-3 md:grid-rows-1 sm:'>
           {currentHotels.map((hotel) => (
             <HotelItem key={hotel.id} hotel={hotel} />
           ))}
