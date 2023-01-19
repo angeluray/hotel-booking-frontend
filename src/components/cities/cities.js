@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import cityReducer from '../../redux/reducers/citiesReducers';
 import { fetchCityAPI } from '../../redux/reducers/citiesReducers';
 
 function DisplayFullCities() {

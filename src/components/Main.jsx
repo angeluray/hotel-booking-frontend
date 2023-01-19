@@ -6,7 +6,6 @@ import HotelItem from './hotels/hotelItem';
 import { getAllHotels } from '../redux/hotel/hotel';
 
 function Index() {
-  // const role = useSelector((state) => state.login.role);
   const hotels = useSelector((state) => state.hotel.all);
   const dispatch = useDispatch();
 
@@ -36,7 +35,6 @@ function Index() {
     }
   }, [currentHotels]);
 
-  // Change pages
   const handlePageUp = () => {
     if (indexOfLastHotel < hotels.length) {
       setCurrentPage((page) => page + 1);

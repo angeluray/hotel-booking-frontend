@@ -126,8 +126,6 @@ const ReservationModal = ({
           )}
         </div>
 
-        {/* Show details for selected room type */}
-
         <div className='mt-6 flex justify-end gap-4 border-t-2 py-4 px-4'>
           <button
             className='rounded-md bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-300 hover:text-green-800'
