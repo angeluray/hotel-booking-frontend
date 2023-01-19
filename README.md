@@ -3,8 +3,8 @@
 
 # Description  
 Hotel Booking Frontend is a Hotel Booking application where the user can register new accounts, login and reserve a set of different Hotels. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
-## Built With
 
+## Built With
 - HTML
 - JS
 - Tailwind
@@ -12,9 +12,16 @@ Hotel Booking Frontend is a Hotel Booking application where the user can registe
 - JSX
 - ReactJS
 - Redux
-## Live Demo
 
-[Click Me]()
+## Screenshots
+
+![image_2023-01-19_19-00-48](https://user-images.githubusercontent.com/97189760/213582355-7102d3bb-4878-4fe2-8207-ddb6ac574844.png)
+![image_2023-01-19_19-01-17](https://user-images.githubusercontent.com/97189760/213582378-7a3e0f7f-f044-4f04-a30f-bba6f60cb7ec.png)
+![image_2023-01-19_19-01-39](https://user-images.githubusercontent.com/97189760/213582402-44439e5e-4efb-468e-ae6c-84c791fc7bcb.png)
+![image_2023-01-19_19-02-40](https://user-images.githubusercontent.com/97189760/213582424-5e6044ab-6a6c-413c-9366-2ad717f7cb4e.png)
+![image_2023-01-19_19-03-41](https://user-images.githubusercontent.com/97189760/213582468-966eea6e-e585-467a-aa87-99c861f6b4dd.png)
+![image_2023-01-19_19-04-03](https://user-images.githubusercontent.com/97189760/213582560-a72aaa97-70a9-40a1-a751-4165db79099f.png)
+![image_2023-01-19_19-06-00](https://user-images.githubusercontent.com/97189760/213582599-cd6585ad-80df-4ac3-8e15-f12a3abe3006.png)
 
 ## Getting Started
 
