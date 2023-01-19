@@ -14,7 +14,7 @@ Hotel Booking Frontend is a Hotel Booking application where the user can registe
 - Redux
 ## Live Demo
 
-[Llick Me]()
+[Click Me]()
 
 ## Getting Started
 
