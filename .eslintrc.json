@@ -29,5 +29,5 @@
     "jsx-a11y/label-has-associated-control": "off",
     "no-param-reassign": "off"
   },
-  "ignorePatterns": ["dist/", "build/"]
+  "ignorePatterns": ["dist/", "build/", "src/"]
 }
