@@ -17,8 +17,8 @@ const ReservationModal = ({
     return 'hidden ';
   };
 
-  const city = hotelInfo.city.name;
-  const hotelName = hotelInfo.name;
+  const city = hotelInfo[0].city_id;
+  const hotelName = hotelInfo[0].name;
 
   return (
     <div

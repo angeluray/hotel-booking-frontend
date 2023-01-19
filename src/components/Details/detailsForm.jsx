@@ -7,13 +7,14 @@ import { useParams } from 'react-router-dom';
 import { getRoomTypes } from '../../redux/RoomTypes/roomTypesSlice';
 import BackButton from '../backButton/BackButton';
 import ReservationModal from './ReservationModal';
-import handleImage from '../../modules/image/handleImage';
+// import handleImage from '../../modules/image/handleImage';
 import printStars from '../../modules/star/printStars';
 import { fetchDetails } from '../../redux/details/detailsReducer';
 import {
   createReservation,
   resetCreateReservationStatus,
 } from '../../redux/reservations/reservationsSlice';
+// import { getAllCities } from '../../redux/city/cityReducer';
 
 function DetailsForm({ token }) {
   const dispatch = useDispatch();
@@ -28,7 +29,10 @@ function DetailsForm({ token }) {
   // const navigateTo = useNavigate();
 
   const { roomDetails, loading } = useSelector((state) => state.details);
+  console.log(roomDetails);
   const displayUser = useSelector((state) => state.login);
+  const displayCities = useSelector((state) => state.cities);
+  console.log('inside la vaina', displayCities);
 
   // Modal controllers
   const [modalVisible, setModalVisible] = useState(false);
@@ -88,26 +92,26 @@ function DetailsForm({ token }) {
             </div>
           )}
           <img
-            src={handleImage(roomDetails.image)}
+            src={roomDetails[0].image}
             alt="placeholder"
             className="w-3/5 sm:w-2/5"
           />
           <div className="flex flex-col items-center md:items-end">
             <h2 className="mb-3 font-Taxicab text-3xl font-bold capitalize text-gray-800">
-              {roomDetails.name.toUpperCase()}
+              {roomDetails[0].name.toUpperCase()}
             </h2>
-            <p className="mb-10 md:text-right">{roomDetails.description}</p>
+            <p className="mb-10 md:text-right">{roomDetails[0].description}</p>
             <table>
               <tbody className="md:text-right">
                 <tr>
                   <td className="py-1 px-4 text-left">Rating:</td>
                   <td className="py-1 px-4">
-                    {printStars(roomDetails.rating)}
+                    {printStars(roomDetails[0].rating)}
                   </td>
                 </tr>
                 <tr className="bg-gray-200">
                   <td className="py-1 px-4 text-left">Country:</td>
-                  <td className="py-1 px-4">{roomDetails.city.name}</td>
+                  <td className="py-1 px-4">{roomDetails[0].name}</td>
                 </tr>
               </tbody>
             </table>
