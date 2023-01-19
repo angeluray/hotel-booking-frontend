@@ -1,5 +1,5 @@
 # Hotel Booking frontend-Project
-#### Link to Rails App [Hello-rails-backend](https://github.com/Tadessejemal1/Hello-rails-backend.git)
+#### Link to Rails App [Hotel Booking Backend](https://github.com/angeluray/hotel-booking-backend.git)
 
 # Description  
 Hotel Booking Frontend is a Hotel Booking application where the user can register new accounts, login and reserve a set of different Hotels. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
