@@ -146,7 +146,7 @@ const AddHotel = () => {
         </div>
         <button
           type='submit'
-          className='focus:shadow-outline appearance-none rounded border bg-lime-400 py-2 px-3 leading-tight text-white hover:bg-gray-200 focus:outline-none'
+          className='focus:shadow-outline appearance-none rounded border bg-lime-400 py-2 px-3 leading-tight text-white hover:bg-blue-500 focus:outline-none'
         >
           Add
         </button>
