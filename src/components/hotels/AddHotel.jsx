@@ -47,7 +47,7 @@ const AddHotel = () => {
           hotel: formData,
           token,
           goToHome: () => navigate('/', { replace: true }),
-        }),
+        })
       );
     } else {
       document.querySelector('#city-error').classList.remove('hidden');
@@ -55,59 +55,59 @@ const AddHotel = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center pt-[10vh]">
+    <div className='flex h-screen items-center justify-center pt-[10vh]'>
       <form
         onSubmit={submitHandler}
-        method="post"
-        className="w-sm-3/4 flex flex-col items-end gap-3 p-9"
+        method='post'
+        className='w-sm-3/4 flex flex-col items-end gap-3 p-9'
       >
         <img
-          className="w-sm-6/12 w-4/12 self-center md:hidden"
-          src="/static/logo.png"
-          alt=""
+          className='w-sm-6/12 w-4/12 self-center md:hidden'
+          src='/static/logo.png'
+          alt=''
           onClick={() => navigate('/')}
         />
-        <h2 className="w-full text-center text-3xl text-gray-800">
+        <h2 className='w-full text-center text-3xl text-gray-800'>
           Add a New Hotel
         </h2>
-        <div className="w-full">
-          <label htmlFor="name">Name</label>
+        <div className='w-full'>
+          <label htmlFor='name'>Name</label>
           <input
-            type="text"
-            name="name"
-            placeholder="Enter hotel name"
+            type='text'
+            name='name'
+            placeholder='Enter hotel name'
             value={newHotel.name}
             onChange={onChangeHandler}
-            autoComplete="off"
-            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+            autoComplete='off'
+            className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
             required
           />
         </div>
-        <div className="w-full">
-          <label htmlFor="rating">Rating</label>
+        <div className='w-full'>
+          <label htmlFor='rating'>Rating</label>
           <input
-            type="number"
-            name="rating"
-            min="1"
-            max="5"
-            step="0.5"
+            type='number'
+            name='rating'
+            min='1'
+            max='5'
+            step='0.5'
             value={newHotel.rating}
             onChange={onChangeHandler}
-            autoComplete="off"
-            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+            autoComplete='off'
+            className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
           />
         </div>
-        <div className="w-full">
-          <label htmlFor="city">Country</label>
+        <div className='w-full'>
+          <label htmlFor='city'>Country</label>
           <select
-            name="city"
+            name='city'
             onChange={onChangeHandler}
-            autoComplete="off"
-            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
-            defaultValue="defaultSelect"
+            autoComplete='off'
+            className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
+            defaultValue='defaultSelect'
             required
           >
-            <option value="defaultSelect" disabled>
+            <option value='defaultSelect' disabled>
               Select a country:
             </option>
             {cities.map((city) => (
@@ -116,36 +116,37 @@ const AddHotel = () => {
               </option>
             ))}
           </select>
-          <p id="city-error" className="hidden w-full text-red-600">
+          <p id='city-error' className='hidden w-full text-red-600'>
             Please enter a valid city name
           </p>
         </div>
-        <div className="w-full">
-          <label htmlFor="description">Description</label>
+        <div className='w-full'>
+          <label htmlFor='description'>Description</label>
           <textarea
-            type="text"
-            name="description"
-            placeholder="Enter hotel description"
+            type='text'
+            name='description'
+            placeholder='Enter hotel description'
             value={newHotel.description}
             onChange={onChangeHandler}
-            autoComplete="off"
-            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+            autoComplete='off'
+            className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
             required
           />
         </div>
-        <div className="w-full">
-          <label htmlFor="image">Image</label>
+        <div className='w-full'>
+          <label htmlFor='image'>Image</label>
           <input
-            type="text"
-            name="image"
+            type='text'
+            name='image'
+            placeholder='Enter image url (e.g. "https://example.com/image.jpg")'
             onChange={onChangeHandler}
-            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+            className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
             required
           />
         </div>
         <button
-          type="submit"
-          className="focus:shadow-outline appearance-none rounded border bg-lime-400 py-2 px-3 leading-tight text-white hover:bg-gray-200 focus:outline-none"
+          type='submit'
+          className='focus:shadow-outline appearance-none rounded border bg-lime-400 py-2 px-3 leading-tight text-white hover:bg-gray-200 focus:outline-none'
         >
           Add
         </button>
