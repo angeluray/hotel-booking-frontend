@@ -16,6 +16,14 @@ Hotel Booking Frontend is a Hotel Booking application where the user can registe
 - ReactJS
 - Redux
 
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demos and Importand links <a name="live-demo"></a>
+
+- [Hotelator Frontend deployment link](https://inspiring-kashata-9d9dfc.netlify.app/)
+
+- [Hotelator Bakend deployment link](https://hotelator.onrender.com)
+
 ## Screenshots
 
 ![image_2023-01-19_19-00-48](https://user-images.githubusercontent.com/97189760/213582355-7102d3bb-4878-4fe2-8207-ddb6ac574844.png)
