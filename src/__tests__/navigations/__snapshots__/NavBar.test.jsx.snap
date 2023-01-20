@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="absolute top-2 left-2 z-20 rounded-md border-2 p-1 md:hidden"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium h-4 w-4 css-i4bv87-MuiSvgIcon-root"
+          data-testid="MenuIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+          />
+        </svg>
+      </button>
+      <nav
+        class="hidden absolute top-0 left-0 z-10 h-screen w-3/5 flex-col items-center justify-evenly overflow-hidden border-r bg-white py-4 pl-2 md:static md:flex md:w-1/5"
+      >
+        <a
+          class="px-4 md:px-6 lg:px-8"
+          href="/"
+        >
+          <img
+            alt="Hotelator Logo"
+            src="/static/logo.png"
+          />
+        </a>
+        <div
+          class="flex w-full flex-col pl-2 pt-12 text-gray-600"
+        >
+          <a
+            class="mt-8 py-2 font-Taxicab text-xl font-bold hover:bg-lime-400 hover:text-slate-50"
+            href="/login"
+          >
+            LOG IN
+          </a>
+          <a
+            class="py-2 font-Taxicab text-xl font-bold hover:bg-lime-400 hover:text-slate-50"
+            href="/register"
+          >
+            SIGN UP
+          </a>
+        </div>
+        <footer
+          class="mt-auto flex flex-col items-center"
+        >
+          <div
+            class="mb-2 flex w-full justify-around"
+          >
+            <i
+              class="fa-brands fa-twitter text-gray-600"
+            />
+            <i
+              class="fa-brands fa-facebook-f text-gray-600"
+            />
+            <i
+              class="fa-brands fa-google-plus-g text-gray-600"
+            />
+            <i
+              class="fa-brands fa-vimeo-v text-gray-600"
+            />
+            <i
+              class="fa-brands fa-pinterest-p text-gray-600"
+            />
+          </div>
+          <p
+            class="text-xs text-gray-600"
+          >
+            ©2023 Hotelator
+          </p>
+        </footer>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="absolute top-2 left-2 z-20 rounded-md border-2 p-1 md:hidden"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium h-4 w-4 css-i4bv87-MuiSvgIcon-root"
+        data-testid="MenuIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        />
+      </svg>
+    </button>
+    <nav
+      class="hidden absolute top-0 left-0 z-10 h-screen w-3/5 flex-col items-center justify-evenly overflow-hidden border-r bg-white py-4 pl-2 md:static md:flex md:w-1/5"
+    >
+      <a
+        class="px-4 md:px-6 lg:px-8"
+        href="/"
+      >
+        <img
+          alt="Hotelator Logo"
+          src="/static/logo.png"
+        />
+      </a>
+      <div
+        class="flex w-full flex-col pl-2 pt-12 text-gray-600"
+      >
+        <a
+          class="mt-8 py-2 font-Taxicab text-xl font-bold hover:bg-lime-400 hover:text-slate-50"
+          href="/login"
+        >
+          LOG IN
+        </a>
+        <a
+          class="py-2 font-Taxicab text-xl font-bold hover:bg-lime-400 hover:text-slate-50"
+          href="/register"
+        >
+          SIGN UP
+        </a>
+      </div>
+      <footer
+        class="mt-auto flex flex-col items-center"
+      >
+        <div
+          class="mb-2 flex w-full justify-around"
+        >
+          <i
+            class="fa-brands fa-twitter text-gray-600"
+          />
+          <i
+            class="fa-brands fa-facebook-f text-gray-600"
+          />
+          <i
+            class="fa-brands fa-google-plus-g text-gray-600"
+          />
+          <i
+            class="fa-brands fa-vimeo-v text-gray-600"
+          />
+          <i
+            class="fa-brands fa-pinterest-p text-gray-600"
+          />
+        </div>
+        <p
+          class="text-xs text-gray-600"
+        >
+          ©2023 Hotelator
+        </p>
+      </footer>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
