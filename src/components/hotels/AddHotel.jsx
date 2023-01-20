@@ -55,7 +55,7 @@ const AddHotel = () => {
   };
 
   return (
-    <div className='flex h-screen w-1/2 items-center justify-center pt-[10vh]'>
+    <div className='flex h-screen items-center justify-center pt-[10vh]'>
       <form
         onSubmit={submitHandler}
         method='post'
@@ -138,7 +138,7 @@ const AddHotel = () => {
           <input
             type='text'
             name='image'
-            placeholder='Enter image url (e.g. "https://example.com/image.jpg")'
+            placeholder='Enter image url here'
             onChange={onChangeHandler}
             className='focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none'
             required
