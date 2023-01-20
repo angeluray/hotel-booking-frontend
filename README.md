@@ -1,10 +1,13 @@
 # Hotel Booking frontend-Project
+
 #### Link to Rails App [Hotel Booking Backend](https://github.com/angeluray/hotel-booking-backend.git)
 
-# Description  
+# Description
+
 Hotel Booking Frontend is a Hotel Booking application where the user can register new accounts, login and reserve a set of different Hotels. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
 
 ## Built With
+
 - HTML
 - JS
 - Tailwind
@@ -30,13 +33,14 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
- - IDE(code editor) like: **Vscode**, **Sublime**, etc.  
- - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 
+- IDE(code editor) like: **Vscode**, **Sublime**, etc.
+- [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 
 ### To launch the project locally:
 
 #### Step 1:
+
 - Clone this repo locally using git and the following git command
 
   ```sh
@@ -45,8 +49,14 @@ To get a local copy up and running follow these simple example steps.
 
 #### Step 2:
 
- ```sh
-  npm start
+```sh
+ npm install
+```
+
+#### Step 3:
+
+```sh
+ npm start
 ```
 
 Runs the app in the development mode.\
@@ -56,11 +66,12 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 <!-- AUTHORS -->
+
 ## 👥 Authors <a name="authors"></a>
 
 <div id="badges"align="center">
 
-## 👤 *Tadesse Jemal*
+## 👤 _Tadesse Jemal_
 
 </div>
 <div id="badges"align="center">
@@ -76,7 +87,7 @@ You may also see any lint errors in the console.
 </div>
 <div id="badges"align="center">
 
-## 👤 *Angel uray*
+## 👤 _Angel uray_
 
 </div>
 
@@ -93,7 +104,7 @@ You may also see any lint errors in the console.
 </div>
 <div id="badges"align="center">
 
-## 👤 *Kumilachew Getie*
+## 👤 _Kumilachew Getie_
 
 </div>
 
