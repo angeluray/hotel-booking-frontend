@@ -4,7 +4,7 @@ export const fetchUserReservations = createAsyncThunk(
   'reservations/fetchUserReservations',
   async (stateData) => {
     const response = await fetch(
-      `https://hotelator.onrender.com/api/v1/users/${stateData.user_id}/reservations`,
+      `https://hotelator.onrender.com/api/v1/users/${stateData.userId}/reservations`,
       {
         headers: {
           Authorization: stateData.token,
