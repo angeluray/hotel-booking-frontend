@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reserve renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="flex h-screen w-full flex-col items-center justify-center px-6 py-4 pt-[22vh]"
+      >
+        <img
+          alt=""
+          class="w-sm-6/12 w-4/12 self-center md:hidden"
+          src="/static/logo.png"
+        />
+        <header>
+          <h2
+            class="font-Taxicab text-3xl capitalize text-gray-800"
+          >
+            Add Reservation
+          </h2>
+        </header>
+        <div
+          class="mt-10 flex h-full w-min flex-col items-center gap-6"
+        >
+          <article>
+            <table
+              cellpadding="4"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <label
+                      for="city"
+                    >
+                      Country:
+                    </label>
+                  </td>
+                  <td>
+                    <select
+                      class="w-48"
+                      id="city"
+                      name="city"
+                    >
+                      <option
+                        disabled=""
+                        value="defaultSelect"
+                      >
+                        Select a country:
+                      </option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label
+                      for="date"
+                    >
+                      Reservation date:
+                    </label>
+                  </td>
+                  <td>
+                    <input
+                      class="w-48"
+                      id="date"
+                      name="date"
+                      type="date"
+                      value="2023-01-19"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+          <article />
+          <button
+            class="mt-6 self-start rounded-md bg-lime-400 px-4 py-2 font-semibold text-white hover:bg-gray-200"
+            type="button"
+          >
+            Confirm reservation
+          </button>
+        </div>
+        <i
+          class="fa-solid fa-caret-left absolute left-0 bottom-4 rounded-r-full bg-lime-400 py-4 px-6 text-slate-50 hover:bg-lime-500 md:hidden"
+        />
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="flex h-screen w-full flex-col items-center justify-center px-6 py-4 pt-[22vh]"
+    >
+      <img
+        alt=""
+        class="w-sm-6/12 w-4/12 self-center md:hidden"
+        src="/static/logo.png"
+      />
+      <header>
+        <h2
+          class="font-Taxicab text-3xl capitalize text-gray-800"
+        >
+          Add Reservation
+        </h2>
+      </header>
+      <div
+        class="mt-10 flex h-full w-min flex-col items-center gap-6"
+      >
+        <article>
+          <table
+            cellpadding="4"
+          >
+            <tbody>
+              <tr>
+                <td>
+                  <label
+                    for="city"
+                  >
+                    Country:
+                  </label>
+                </td>
+                <td>
+                  <select
+                    class="w-48"
+                    id="city"
+                    name="city"
+                  >
+                    <option
+                      disabled=""
+                      value="defaultSelect"
+                    >
+                      Select a country:
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label
+                    for="date"
+                  >
+                    Reservation date:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    class="w-48"
+                    id="date"
+                    name="date"
+                    type="date"
+                    value="2023-01-19"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article />
+        <button
+          class="mt-6 self-start rounded-md bg-lime-400 px-4 py-2 font-semibold text-white hover:bg-gray-200"
+          type="button"
+        >
+          Confirm reservation
+        </button>
+      </div>
+      <i
+        class="fa-solid fa-caret-left absolute left-0 bottom-4 rounded-r-full bg-lime-400 py-4 px-6 text-slate-50 hover:bg-lime-500 md:hidden"
+      />
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
