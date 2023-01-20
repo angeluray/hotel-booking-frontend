@@ -24,6 +24,15 @@ Hotel Booking Frontend is a Hotel Booking application where the user can registe
 
 - [Hotelator Bakend deployment link](https://hotelator.onrender.com)
 
+## Kanbanboard
+
+- [Kanban board link](https://github.com/users/angeluray/projects/2)
+- [Kanban board initial state + screenshots + initial colaborators](https://github.com/angeluray/hotel-booking-backend/issues/15)
+- The final number of colaborators is 3:
+   - @Kumilachew-g
+   - @Tadessejemal1 
+   - @angeluray
+
 ## Screenshots
 
 ![image_2023-01-19_19-00-48](https://user-images.githubusercontent.com/97189760/213582355-7102d3bb-4878-4fe2-8207-ddb6ac574844.png)
