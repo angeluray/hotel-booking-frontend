@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex h-screen w-screen items-center justify-center bg-slate-100"
+      >
+        <div
+          class="absolute top-6 left-6"
+        >
+          <button
+            class="rounded-full border-4 p-2 text-gray-400 md:p-4 "
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="ArrowBackIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+              />
+            </svg>
+          </button>
+        </div>
+        <form
+          class="w-sm-3/4 flex flex-col gap-2 p-9"
+        >
+          <div
+            class="w-full flex justify-center"
+          >
+            <div
+              class="w-7/12 sm:w-6/12 md:w-5/12 self-center px-5"
+            >
+              <img
+                alt="Hotelator Logo"
+                class="self-center"
+                src="/static/logo.png"
+              />
+            </div>
+          </div>
+          <h2
+            class="w-full text-center font-Taxicab text-3xl capitalize text-gray-800"
+          >
+            Login
+          </h2>
+          <div
+            class="w-full"
+          >
+            <label
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              autocomplete="off"
+              class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+              name="email"
+              placeholder="Enter your email"
+              required=""
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            class="w-full"
+          >
+            <label
+              for="password"
+            >
+              Password
+            </label>
+            <input
+              autocomplete="off"
+              class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+              name="password"
+              placeholder="Enter your password"
+              required=""
+              type="password"
+              value=""
+            />
+          </div>
+          <p
+            class="hidden w-full text-red-600"
+            id="login-error"
+          >
+            Please enter a valid name or password
+          </p>
+          <button
+            class="focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight bg-lime-400 text-slate-50 hover:bg-blue-500 focus:outline-none self-end"
+            type="submit"
+          >
+            Login
+          </button>
+          <p
+            class="text-center text-gray-800 pt-6"
+          >
+            Don't have an account? 
+            <a
+              class="focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight bg-lime-400 text-slate-50 hover:bg-blue-500 focus:outline-none self-end"
+              href="/register"
+            >
+              Sign up
+            </a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex h-screen w-screen items-center justify-center bg-slate-100"
+    >
+      <div
+        class="absolute top-6 left-6"
+      >
+        <button
+          class="rounded-full border-4 p-2 text-gray-400 md:p-4 "
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ArrowBackIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+            />
+          </svg>
+        </button>
+      </div>
+      <form
+        class="w-sm-3/4 flex flex-col gap-2 p-9"
+      >
+        <div
+          class="w-full flex justify-center"
+        >
+          <div
+            class="w-7/12 sm:w-6/12 md:w-5/12 self-center px-5"
+          >
+            <img
+              alt="Hotelator Logo"
+              class="self-center"
+              src="/static/logo.png"
+            />
+          </div>
+        </div>
+        <h2
+          class="w-full text-center font-Taxicab text-3xl capitalize text-gray-800"
+        >
+          Login
+        </h2>
+        <div
+          class="w-full"
+        >
+          <label
+            for="email"
+          >
+            Email
+          </label>
+          <input
+            autocomplete="off"
+            class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+            name="email"
+            placeholder="Enter your email"
+            required=""
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="w-full"
+        >
+          <label
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            autocomplete="off"
+            class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+            name="password"
+            placeholder="Enter your password"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
+        <p
+          class="hidden w-full text-red-600"
+          id="login-error"
+        >
+          Please enter a valid name or password
+        </p>
+        <button
+          class="focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight bg-lime-400 text-slate-50 hover:bg-blue-500 focus:outline-none self-end"
+          type="submit"
+        >
+          Login
+        </button>
+        <p
+          class="text-center text-gray-800 pt-6"
+        >
+          Don't have an account? 
+          <a
+            class="focus:shadow-outline appearance-none rounded border py-2 px-3 leading-tight bg-lime-400 text-slate-50 hover:bg-blue-500 focus:outline-none self-end"
+            href="/register"
+          >
+            Sign up
+          </a>
+        </p>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
