@@ -55,7 +55,7 @@ const AddHotel = () => {
   };
 
   return (
-    <div className='flex h-screen items-center justify-center pt-[10vh]'>
+    <div className='flex h-screen w-1/2 items-center justify-center pt-[10vh]'>
       <form
         onSubmit={submitHandler}
         method='post'
