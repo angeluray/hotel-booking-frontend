@@ -4,7 +4,7 @@
 
 # Description
 
-Hotel Booking Frontend is a Hotel Booking application where the user can register new accounts, login and reserve a set of different Hotels. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
+Hotel Booking Frontend is a Hotel Booking application that allows people around the world reserve a set of different Hotel rooms worldwide by just sign-up and sign-in within the web app. Additionally, allows business owners to post their own hotel-rooms. It is built and connected by using two different repos, meaning we used Ruby on Rails for the Backend and React and Redux for the Frontend while applying cutting-edge development practices and Test-driven development.
 
 ## Built With
 
